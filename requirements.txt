@@ -8,6 +8,3 @@ python-decouple==2.3
 PyYAML==3.11
 Unipath==1.0
 watchdog==0.8.3
-
-# production
-gunicorn==19.1.1
