@@ -1,0 +1,28 @@
+# compiled, logs and databases
+*.db
+*.pyc
+*.log
+static/.webassets-cache/
+
+# bower and compiled/processed assets
+static/bower/
+static/*.js
+static/*.css
+
+# dev tools, ide etc.
+.env
+.vagrant/
+.ropeproject
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.*~
+*~

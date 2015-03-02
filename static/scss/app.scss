@@ -1,0 +1,13 @@
+// set and import framework
+$grid-columns: 6;
+@import "bourbon";
+@import "neat";
+
+// import app styles & settings
+@import "fonts";
+@import "colors";
+@import "mixins";
+@import "ids";
+@import "classes";
+@import "tags";
+@import "animations";

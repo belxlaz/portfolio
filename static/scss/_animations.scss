@@ -1,0 +1,171 @@
+// mobile menu
+
+.menu-mobile {
+  @include animation(hide-mobile-menu 333ms cubic-bezier(1, 0, 0, 1) forwards);
+  height: 0; 
+  &.active {
+    @include animation(show-mobile-menu 333ms cubic-bezier(1, 0, 0, 1) forwards);
+    height: 100%;
+  }
+}
+
+@include allkeyframes(show-mobile-menu) {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  1% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+} 
+
+@include allkeyframes(hide-mobile-menu) {
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+  99% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+// burguer
+
+#menu {
+
+  #burger {
+    background-color: $burger-background-color;
+    border: .4em solid transparent;
+    border-width: .5em .4em;
+    height: 2em;
+    position: relative;
+    width: 2em;
+  }
+
+  &.active #burger { background-color: transparent }
+
+  .bar {
+    @include transform(rotate(0deg));
+    position: absolute;
+    height: .1em;
+    background-color: $subtitle-color;
+    width: 100%;
+    &:nth-of-type(1) { top: 0% }
+    &:nth-of-type(2) {
+      top: 50%;
+      @include transform(translateY(-.05em));
+    }
+    &:nth-of-type(3) {
+      top: 100%;
+      @include transform(translateY(-.1em));
+    }
+  }
+  
+  &.active .bar:nth-of-type(1) { @include animation(top-down 333ms cubic-bezier(1, 0, 0, 1) forwards) }
+  &.active .bar:nth-of-type(2) { @include animation(disappear 333ms cubic-bezier(1, 0, 0, 1) forwards) }
+  &.active .bar:nth-of-type(3) { @include animation(bottom-up 333ms cubic-bezier(1, 0, 0, 1) forwards) }
+  &.inactive .bar:nth-of-type(1) { @include animation(top-down-reverse 333ms cubic-bezier(1, 0, 0, 1) forwards) }
+  &.inactive .bar:nth-of-type(2) { @include animation(appear 333ms cubic-bezier(1, 0, 0, 1) forwards) }
+  &.inactive .bar:nth-of-type(3) { @include animation(bottom-up-reverse 333ms cubic-bezier(1, 0, 0, 1) forwards) }
+
+}
+
+@include allkeyframes(top-down) {
+  0% {
+    top: 0;
+    @include transform(rotate(0deg));
+  }
+  50% {
+    top: 50%;
+    @include transform(rotate(0deg));
+  }
+  100% {
+    top: 50%;
+    @include transform(rotate(135deg));
+  }
+}
+
+@include allkeyframes (top-down-reverse) {
+  0% {
+    top: 50%;
+    @include transform(rotate(135deg));    
+  }
+  50% {
+    top: 50%;
+    @include transform(rotate(0deg));   
+  }
+  100% {
+    top: 0%;
+    @include transform(rotate(0deg));   
+  }
+}
+
+@include allkeyframes (disappear) {
+  0% {
+    opacity: 1;
+    @include transform(rotate(0deg));
+  }
+  50% {
+    opacity: 1;
+    @include transform(rotate(0deg));
+  }
+  100% {
+    opacity: 0;
+    @include transform(rotate(135deg));
+  }
+}
+
+@include allkeyframes (appear) {
+  0% {
+    opacity: 0;
+    @include transform(rotate(135deg));
+  }
+  50% {
+    opacity: 1;
+    @include transform(rotate(0));
+  }
+  100% {
+    opacity: 1;
+    @include transform(rotate(0));
+  }
+}
+
+@include allkeyframes (bottom-up) {
+  0% {
+    top: 100%;
+    @include transform(rotate(0deg));   
+  }
+  50% {
+    top: 50%;
+    @include transform(rotate(0deg));   
+  }
+  100% {
+    top: 50%;
+    @include transform(rotate(-135deg));
+  }  
+}
+
+@include allkeyframes (bottom-up-reverse) {
+  0% {
+    top: 50%;
+    @include transform(rotate(-135deg));
+  }
+  50% {
+    top: 50%;
+    @include transform(rotate(0deg));
+  }
+  100% {
+    top: 100%;
+    @include transform(rotate(0deg));
+  }
+}

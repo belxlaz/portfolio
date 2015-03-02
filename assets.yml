@@ -1,0 +1,28 @@
+js:
+  output: app.js
+  filters: rjsmin
+  contents:
+    - bower/fastclick/lib/fastclick.js
+    - bower/modernizr/modernizr.js
+    - bower/jquery/dist/jquery.js
+    - output: init.js
+      filters: coffeescript
+      contents:
+        - coffeescript/menu.coffee
+        - coffeescript/projects.coffee
+        - coffeescript/svg2png.coffee
+
+css:
+  output: app.css
+  filters: pyscss, cssmin
+  contents:
+    - bower/normalize.css/normalize.css
+    - scss/app.scss
+  depends:
+    - scss/_colors.scss
+    - scss/_fonts.scss
+    - scss/_mixins.scss
+    - scss/_ids.scss
+    - scss/_classes.scss
+    - scss/_tags.scss
+    - scss/_animations.scss

@@ -1,0 +1,16 @@
+
+@mixin allkeyframes ($name) {
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @-mox-keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+

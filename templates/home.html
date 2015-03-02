@@ -1,0 +1,58 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="about">
+                    <div class="wide vertical-crop">
+                        <img src="{{ url_for('static', filename='imgs/cover.png') }}" alt="{{ name }}"> 
+                    </div><!-- end .wide -->
+                    <div class="content">
+                        <article>
+                            <h2>Hi, I'm Mabel Lazzarin</h2>
+                            <p>Graphic designer who started to work with product development 7 years ago. During this time I've participated in all design processes (from research to manufacture) at Intelbras and Whirlpool. My skills include making innovative ideas feasible and creating different ways to push products beyond their core functions.</p>
+                            <p>I'm studing UX Design at General Assembly and looking for new interesting projects to join in London.</p>
+                        </article><!-- end #about -->
+                    </div><!-- end .content -->
+                    <div class="work-interests"></div><!-- end .work-interests -->
+                </div><!-- end #about -->
+
+                <div id="projects">
+                    <div class=content>
+                        <article>
+                            <h2>Projects</h2>
+                            <ul class="filter">
+                                <li class="active" data-keywords="ux, graphic, trend">All</li>
+                                <li data-keywords="ux">Experience<br>Design</li>
+                                <li data-keywords="graphic">Graphic<br>Design</li>
+                                <li data-keywords="trend">Trend<br>Research</li>
+                            </ul>
+                            <ul class="gallery">
+                                <li class="ux">
+                                    <a href="">
+                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=ux1">
+                                    </a>
+                                </li>
+                                <li class="graphic">
+                                    <a href="">
+                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=graphic">
+                                    </a>
+                                </li>
+                                <li class="ux">
+                                    <a href="">
+                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=ux2">
+                                    </a>
+                                </li>
+                            </ul>
+                        </article>
+                    </div><!-- end .content -->
+                </div><!-- end #projects -->
+
+                <div id="contatcs">
+                    <div class="content">
+                        <article class="no-split">
+                            <h2>Contacts</h2>
+                            <p>I am always interested in hearing from anybody who has suggestions for projects or just want to talk about user experience design in general. Feel free to get in touch and we can grab a coffee.</p>
+                        </article>
+                    </div><!-- end .content -->
+                </div><!-- end #contacts -->
+
+{% endblock %}

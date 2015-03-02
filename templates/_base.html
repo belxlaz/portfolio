@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    
+        <!-- basic headers -->
+        <meta charset="utf-8">
+        <meta name=viewport content="width=device-width,initial-scale=1">
+        <title>{{ title }}</title>
+    
+        <!-- seo & socila networks -->
+        <meta name="description" content="{{ description }}">
+        <meta name="keywords" content="{{ keywords }}">
+        <meta name="author" content="{{ name }}">
+        <meta property="og:site_name" content="{{ name }}">
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:type" content=website>
+        <meta property="og:url" content={{ request.url }}>
+        <meta property="og:image" content={{ banner }}>
+        <meta property="og:description" content="{{ description }}">
+    
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-57x57.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-114x114.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-72x72.png')}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-144x144.png')}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-60x60.png')}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-120x120.png')}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-76x76.png')}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-152x152.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='imgs/favicon/apple-touch-icon-180x180.png')}}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='imgs/favicon/favicon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="160x160" href="{{ url_for('static', filename='imgs/favicon/favicon-160x160.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='imgs/favicon/favicon-96x96.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='imgs/favicon/favicon-16x16.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='imgs/favicon/favicon-32x32.png')}}">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-TileImage" content="{{ url_for('static', filename='imgs/favicon/mstile-144x144.png')}}">
+        <meta name="theme-color" content="#ffffff">
+    
+        <!-- assets -->
+        {% assets 'css' %}
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,300,700,300italic,400italic,700italic">
+        <link rel="stylesheet" href="{{ ASSET_URL }}">
+        {% endassets %}
+
+    </head>
+    
+    <body class="{{ page_class }}">
+
+        <div id="page">
+
+            <div id="top">
+                <div class="content">
+                    <header>
+                        <h1>
+                            <a href="{{ url_for('index') }}#page">
+                                <img src="{{ url_for('static', filename='imgs/logo.svg') }}" alt="{{ name }}">
+                            </a>
+                        </h1>
+                        <nav class="menu" id="menu">
+                            {% include '_menu.html' %}
+                        </nav>
+                    </header>
+                </div><!-- end .content -->
+            </div><!-- end .wrapper -->
+            
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+
+            <div id="footer">
+                <div class="content">
+                    <footer>
+                        <ul>
+                            <li class="email">
+                                <a href="mailto:"><img src="{{ url_for('static', filename='imgs/icon-email.svg') }}" alt="Email"></a>
+                            </li>
+                            <li class="linkedin">
+                                <a href="http:/LinkedIn.svg/linkedin.com/in/belxlaz"><img src="{{ url_for('static', filename='imgs/icon-linkedin.svg') }}" alt="LinkedIn"></a>
+                            </li>
+                            <li class="behance">
+                                <a href="http:/Behance.svg/behance.com/belxlaz"><img src="{{ url_for('static', filename='imgs/icon-behance.svg') }}" alt="Behance"></a>
+                            </li>
+                            <li class="tumblr">
+                                <a href="http:/Tumblr.svg/belxlaz.tumblr.com"><img src="{{ url_for('static', filename='imgs/icon-tumblr.svg') }}" alt="Tumblr"></a>
+                            </li>
+                            <li class="twitter">
+                                <a href="http:/Twitter.svg/twitter.com/belxlaz"><img src="{{ url_for('static', filename='imgs/icon-twitter.svg') }}" alt="Twitter"></a>
+                            </li>
+                            <li class="instagram">
+                                <a href="http:/Instagram.svg/instagram.com/belxlaz"><img src="{{ url_for('static', filename='imgs/icon-instagram.svg') }}" alt="Instagram"></a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div><!-- end .content -->
+            </div><!-- end #footer -->
+
+        </div><!-- end #page -->
+
+        <nav class="menu-mobile">
+            {% include '_menu.html' %}
+        </nav>
+
+        {% assets 'js' %}
+        <script src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+
+    </body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font: $text-font;
+}
+
+main { padding-top: 3em }
+
+article {
+  border-bottom: .15em solid $split-color;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  &.no-split { border-bottom: none }
+}
+
+h2 {
+  color: $title-color;
+  font: $title-font;
+  text-align: center;
+}
+
+img { width: 100% }
+
