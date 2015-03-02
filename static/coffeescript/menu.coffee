@@ -1,7 +1,16 @@
 $ ->
 
+  # useful vars
+  $.is_home = $('body').hasClass 'home'
+  $.highlighted = false
+  $.window = $(window)
+
   # scroll to hash on load
   animate_scroll_to location.hash if location.hash
+
+  # highlight menu (desktop only)
+  menu_highlight()
+  $.window.scroll menu_highlight
 
   # build burger menu
   burger_tag = document.createElement('div')
@@ -20,11 +29,10 @@ $ ->
 
   # menu navigation
   $('.menu-links').find('a').click menu_click
-  $('#top').find('a').click menu_click
+  $('#top').find('h1').find('a').click menu_click
 
 menu_click = ->
 
-  console.log 'hey'
   # check if is an anchor within the same page
   same_url = location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
   same_host = location.hostname == this.hostname
@@ -39,7 +47,7 @@ menu_click = ->
 
 toggle_menu = ->
   burger = $('#burger')
-  if burger
+  if burger.css('display') == 'block'
 
     # toggle classes
     menu = burger.parent()
@@ -48,9 +56,9 @@ toggle_menu = ->
 
     # enable/disable scroll
     if menu.hasClass 'active'
-      $(window).bind 'touchmove', (e) -> e.preventDefault()
+      $.window.bind 'touchmove', (e) -> e.preventDefault()
     else
-      $(window).unbind 'touchmove'
+      $.window.unbind 'touchmove'
 
 toggle_menu_classes = (obj) ->
   if obj.hasClass('loaded')
@@ -62,4 +70,51 @@ toggle_menu_classes = (obj) ->
 animate_scroll_to = (target) ->
   obj = $(target)
   if obj
-    $('html, body').animate { scrollTop: obj.offset().top }, 333
+    pos = obj.offset().top
+    pos -= $('#about').offset().top if $.is_home
+    $('html, body').animate { scrollTop: pos }, 333
+
+scroll_map = ->
+
+  # suport vars
+  projects = $('#projects')
+  contacts = $('#contacts')
+  has_projects = if $.is_home and projects.length > 0 then true else false
+  has_contacts = if $.is_home and contacts.length > 0 then true else false
+
+  # get offset
+  about_pos = if $.is_home then 0 else false
+  projects_pos = if has_projects then projects.offset().top else false
+  contacts_pos = if has_contacts then contacts.offset().top else false
+
+  # adjust contatcs (change on bottom, not top)
+  contacts_pos -= $.window.height()
+
+  # return
+  output = {
+    about: about_pos,
+    projects: projects_pos,
+    contacts: contacts_pos
+  }
+
+menu_highlight = ->
+  pos = $.window.scrollTop()
+  map = scroll_map()
+  if pos > map.contacts
+    menu_toggle_highlight 'contacts'
+  else if pos > map.projects
+    menu_toggle_highlight 'projects'
+  else if pos >= map.about
+    menu_toggle_highlight 'about'
+  else
+    $('.menu').find('a').removeClass 'active'
+
+menu_toggle_highlight = (target) ->
+  if target != $.highlighted
+    $.highlighted = target
+    $('.menu').find('a').each ->
+      href = $(this).attr 'href'
+      if href.indexOf('#' + target) > -1
+        $(this).addClass 'active'
+      else
+        $(this).removeClass 'active'

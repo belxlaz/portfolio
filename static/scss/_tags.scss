@@ -4,9 +4,12 @@ body {
   font: $text-font;
 }
 
-main { padding-top: 3em }
+main {
+  padding-top: 3em;
+  @include media($desktop) { padding-top: 5em }
+}
 
-article {
+article{
   border-bottom: .15em solid $split-color;
   margin-bottom: 1em;
   padding-bottom: 1em;

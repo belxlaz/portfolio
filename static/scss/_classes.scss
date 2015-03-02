@@ -1,5 +1,32 @@
 .menu {
-  ul { display: none }
+  ul {
+    display: none;
+    @include media($desktop) {
+      display: block;
+      padding: 0;
+      text-align: right;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        margin-right: 1.618em;
+        &:last-child { margin-right: 0 }
+      }
+      a {
+        @include transition(color 333ms, border-color 333ms);
+        border-bottom: .05em solid transparent;
+        color: $disabled-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        &.active, &:hover {
+          color: $highlight-color;
+          border-bottom-color: $highlight-color;
+        }
+        &:hover {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
 }
 
 .menu-mobile {
@@ -35,8 +62,6 @@
   @include pad(0 16px);
 }
 
-$tablet: new-breakpoint(min-width 768px 4);
-
 .wide {
   overflow: hidden;
   width: 100%;
@@ -53,8 +78,11 @@ $tablet: new-breakpoint(min-width 768px 4);
       margin-left: 50%;
       max-height: 12em;
       width: auto;
-      @include media($tablet) {
-        max-height: 24em;
+      @include media($tablet, $desktop) {
+        @include transform(translateX(0%));
+        margin-left: 0;
+        max-height: none;
+        width: 100%;
       }
     }
   }

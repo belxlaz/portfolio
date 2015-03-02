@@ -1,13 +1,20 @@
-// set and import framework
-$grid-columns: 6;
+// import framework
 @import "bourbon";
 @import "neat";
 
-// import app styles & settings
+// breakpoints
+$mobile: new-breakpoint(max-width 767px);
+$tablet: new-breakpoint(min-width 768px); 
+$desktop: new-breakpoint(min-width 960px); 
+$wide: new-breakpoint(min-width 1800px); 
+
+// import app settings
 @import "fonts";
 @import "colors";
 @import "mixins";
-@import "ids";
-@import "classes";
+
+// import app styles
 @import "tags";
+@import "classes";
+@import "ids";
 @import "animations";
