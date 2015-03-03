@@ -2,12 +2,12 @@
 *.db
 *.pyc
 *.log
-static/.webassets-cache/
+portfolio/static/.webassets-cache/
 
 # bower and compiled/processed assets
-static/bower/
-static/*.js
-static/*.css
+portfolio/static/bower/
+portfolio/static/*.js
+portfolio/static/*.css
 
 # dev tools, ide etc.
 .env
