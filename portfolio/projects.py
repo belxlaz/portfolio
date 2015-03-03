@@ -1,5 +1,6 @@
 import os
 import yaml
+import random
 
 
 class Project(object):
@@ -43,6 +44,25 @@ class Project(object):
             project = self.all[key]
             if keyword in project['keywords']:
                 output.append(key)
+        return output
+
+    def suggestion(self, list_of_keywords, limit=False):
+
+        # get all suggestions
+        filtered = list()
+        for keyword in list_of_keywords:
+            filtered.extend(self.filter(keyword))
+        if not limit:
+            limit = len(filtered)
+
+        # randomize
+        output = list()
+        while len(filtered) > 0:
+            choosen = random.choice(filtered)
+            output.append(choosen)
+            filtered.remove(choosen)
+            if len(output) == limit:
+                break
         return output
 
     def __get_order(self, file_handler):
