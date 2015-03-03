@@ -10,7 +10,7 @@ class Project(object):
         # main veriables
         self.all = dict()
         self.order = list()
-        
+
         # set root
         if not root or not os.path.isdir(root):
             root = os.path.dirname(os.path.abspath(__file__))
@@ -37,6 +37,12 @@ class Project(object):
                 output['key'] = key
             return output
         return None
+
+    def exist(self, key):
+        if self.all:
+            if key in self.all.keys():
+                return True
+        return False
 
     def filter(self, keyword):
         output = list()

@@ -43,3 +43,8 @@ echo "==> Installing Bower packages..."
 echo ""
 cd /vagrant
 su -c "bower install" -s /bin/sh vagrant
+
+echo ""
+echo "==> Installing Python development tools..."
+echo ""
+pip3 install ipython3 flake8
