@@ -12,6 +12,7 @@ js:
         - coffeescript/gallery.coffee
         - coffeescript/project.coffee
         - coffeescript/svg2png.coffee
+        - coffeescript/email.coffee
 
 css:
   output: app.css
