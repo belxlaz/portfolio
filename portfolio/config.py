@@ -1,3 +1,4 @@
+# coding: utf-8
 from decouple import config
 from os import path
 

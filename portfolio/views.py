@@ -1,6 +1,10 @@
+# coding: utf-8
+import sys
 from flask import abort, Blueprint, g, render_template
 from portfolio.projects import Project
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
 site = Blueprint('site', __name__, static_folder='static')
 projects = Project()
 

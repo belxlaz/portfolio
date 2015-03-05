@@ -1,6 +1,6 @@
 #!/home1/meiaduzi/venv/mabel/bin/python
 
 from flup.server.fcgi import WSGIServer
-from portfolio import app as application
+from portfolio import app
 
-WSGIServer(application).run()
+WSGIServer(app).run()
