@@ -1,6 +1,6 @@
 $font-family: 'Lato', sans-serif;
-$base-size: .9em;
-@include media($desktop) { $base-size: 1.3em }
+$base-size-mobile: .9em;
+$base-size: 1.3em;
 
 $bold-weight: 700;
 $light-weight: 300;

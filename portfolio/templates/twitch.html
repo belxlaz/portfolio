@@ -43,10 +43,10 @@
                             {{ img('projects-twitch-team.png', 'Team') }}
                         </div><!-- end .wide -->
                         <article>
-                            <div class="two-thirds stats last">
+                            <div class="two-thirds last">
                                 <h3>Process</h3>
                                 <p>{{ lipsum(n=1, html=False) }}</p>
-                                <div class="third right">
+                                <div class="third right twitch-chart">
                                     {{ img('projects-twitch-survey.svg', 'Survey results') }}
                                 </div>
                                 <div class="twitch-stats">
@@ -65,7 +65,7 @@
                                 </div><!-- end .twitch-stats -->
                             </div>
 
-                            <!-- just templating -->
+                            <!-- just templating
                             <div class="half">
                                 <h6>.half</h6>
                                 <p>{{ lipsum(n=1, html=False) }}</p>
@@ -94,7 +94,7 @@
                                 <h6>.three-quarters.last</h6>
                                 <p>{{ lipsum(n=1, html=False) }}</p>
                             </div>
-                            <!-- end templating -->
+                             end templating -->
 
                             <div class="third">
                                 <div class="wide">
@@ -136,11 +136,9 @@
                                     {{ img('projects-twitch-testing.png', 'User testing') }}
                                 </div>
                                 <h4>User testing</h4>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
+                                <p class="pre-split">{{ lipsum(n=1, html=False) }}</p>
                             </div>
                         </article>
-                    </div><!-- end .project-content -->
-                    <div class="content">
                         <article class="no-split">
                             <h3>Deliver</h3>
                             <div class="half">
@@ -149,8 +147,11 @@
                             <div class="half">
                                 <p>{{ lipsum(n=1, html=False) }}</p>
                             </div>
+                            <div class="wide">
+                                {{ img('projects-twitch-deliver.png', 'Deliver') }}
+                            </div>
                         </article>
-                    </div><!-- end .project-content -->
+                    </div><!-- end .content -->
                 </div><!-- end #project-content -->
 
                 {% include '_suggestions.html' %}

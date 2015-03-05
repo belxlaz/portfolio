@@ -1,8 +1,8 @@
 #top {
+  background-color: $menu-background-color;
   position: fixed;
   width: 100%;
   z-index: 2;
-  @include media($desktop) { background-color: $menu-background-color }
   h1, nav {
     float: left;
     height: 1em;

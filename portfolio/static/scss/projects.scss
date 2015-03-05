@@ -2,9 +2,13 @@
   h2, h3 {
     color: $title-color;
     font: $title-font;
-    font-size: 1em;
+    font-size: 1.618em;
     margin-bottom: 0;
     text-align: left;
+  }
+  p {
+    &:last-child { margin-bottom: 2.617em }
+    &.pre-split:last-child { margin-bottom: .5em }
   }
 }
 #project-header {
@@ -13,7 +17,7 @@
     span {
       display: block;
       font: $subtitle-font;
-      font-size: .8em;
+      font-size: .618em;
       font-style: italic;
     }
   }
@@ -35,7 +39,7 @@
     &:after { content: ':' }
   }
   .info {
-    padding-top: 1em;
+    padding: 1em 0;
     background-color: $footer-background-color;
   }
   .wide {
@@ -47,23 +51,22 @@
   h4 {
     color: $subtitle-color;
     font: $subtitle-font;
+    font-size: 1.618em;
     margin: .618em 0 0 0;
   }
-  .content {
-    .wide {
-      background-size: cover;
-      box-sizing: content-box; 
-      left: -16px;
-      padding: 0 16px;
-      position: relative;
-      img { visibility: hidden }
-      @include media($desktop) {
-        box-sizing: border-box;
-        left: 0;
-        padding: 0;
-        position: static;
-        img { visibility: visible }
-      }
+  .wide {
+    background-size: cover;
+    box-sizing: content-box; 
+    left: -16px;
+    padding: 0 16px;
+    position: relative;
+    img { visibility: hidden }
+    @include media($desktop) {
+      box-sizing: border-box;
+      left: 0;
+      padding: 0;
+      position: static;
+      img { visibility: visible }
     }
   }
   @include media($tablet) {
