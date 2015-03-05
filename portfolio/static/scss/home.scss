@@ -12,15 +12,15 @@
       border-bottom: 0;
     }
     .work-interests {
-      display: block;
-      background: transparent url(/static/imgs/work-interests.png) no-repeat center center;
       background-size: cover;
-      padding: 3em 0;
+      background: transparent url(/static/imgs/work-interests.png) no-repeat center center;
       color: $background-color;
+      display: block;
+      padding: 3em 0;
       text-align: center;
       h2 {
-        text-transform: lowercase;
         color: $background-color;
+        text-transform: lowercase;
       }
       ul {
         @include outer-container;
@@ -29,14 +29,14 @@
       }
       li {
         @include span-columns(4);
-        text-transform: uppercase;
-        font: $subtitle-font;
         font-size: 1em;
+        font: $subtitle-font;
+        text-transform: uppercase;
       }
       img {
         display: block;
-        width: 38.2%;
         margin: 0 auto;
+        width: 38.2%;
       }
     }
   }
