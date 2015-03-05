@@ -6,7 +6,7 @@ $ ->
   $.window = $(window)
 
   # scroll to hash on load
-  animate_scroll_to location.hash if location.hash and $is_home
+  animate_scroll_to location.hash if location.hash and $.is_home
 
   # highlight menu (desktop only)
   menu_highlight()

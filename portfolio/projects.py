@@ -53,7 +53,7 @@ class Project(object):
         return output
 
     def suggestion(self, key, limit=False):
-        
+
         # get all suggestions
         filtered = list()
         for keyword in self.all[key]['keywords']:

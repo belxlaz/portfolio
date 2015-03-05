@@ -1,4 +1,4 @@
-from flask import abort, Blueprint, g, render_template, url_for
+from flask import abort, Blueprint, g, render_template
 from portfolio.projects import Project
 
 site = Blueprint('site', __name__, static_folder='static')
