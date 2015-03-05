@@ -14,6 +14,7 @@
       margin: 1em 0;
       text-align: center;
       width: 33%;
+      @include media($tablet) { margin-top: 4em }
     }
   }
   .twitch-chart {
