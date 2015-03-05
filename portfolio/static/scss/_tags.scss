@@ -12,6 +12,7 @@ main {
 }
 
 article {
+  @include clearfix;
   border-bottom: .15em solid $split-color;
   margin-bottom: 1em;
   padding-bottom: 1em;

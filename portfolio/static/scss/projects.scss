@@ -26,6 +26,7 @@
     font-size: .8em;
     margin: 0;
     padding: 1em 0;
+    @include media($tablet) { padding: .2em 0 }
   }
   dt, dd {
     float: left;
@@ -41,9 +42,13 @@
   .info {
     padding: 1em 0;
     background-color: $footer-background-color;
+    @include media($tablet) { padding: 1em 0 1.618em 0 }
   }
   .wide {
     background-color: $footer-background-color;
+  }
+  @include media($tablet) {
+    h2, dl, .briefing, .solution { @include span-columns(6) }
   }
 }
 
@@ -61,7 +66,7 @@
     padding: 0 16px;
     position: relative;
     img { visibility: hidden }
-    @include media($desktop) {
+    @include media($tablet) {
       box-sizing: border-box;
       left: 0;
       padding: 0;
@@ -70,13 +75,13 @@
     }
   }
   @include media($tablet) {
+    .row { @include clearfix }
     .whole { @include span-columns(12) }
     .three-quarters { @include span-columns(9) }
     .two-thirds { @include span-columns(8) }
     .half { @include span-columns(6) }
     .third { @include span-columns(4) }
     .quarter { @include span-columns(3) }
-    .last { @include omega() }
   }
 }
 

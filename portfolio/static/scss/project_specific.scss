@@ -2,9 +2,6 @@
 #project-content {
   .twitch-stats {
     @include clearfix;
-    font-size: .8em;
-    margin: 1em 0;
-    text-align: center;
     span {
       color: $title-color;
       display: block;
@@ -13,15 +10,19 @@
     }
     div {
       float: left;
-      padding-bottom: 2.617em;
+      font-size: .8em;
+      margin: 1em 0;
+      text-align: center;
       width: 33%;
     }
   }
   .twitch-chart {
+    margin-bottom: 1em;
     img {
       display: block;
       margin: 0 auto;
       width: 75%;
+      @include media ($tablet) { width: 100% } 
     }
   }
 }

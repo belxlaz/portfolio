@@ -38,106 +38,69 @@
                 </div><!-- end #project-header -->
                 
                 <div id="project-content">
+                    <div class="wide">
+                        {{ img('projects-twitch-team.png', 'Team') }}
+                    </div><!-- end .wide -->
                     <div class="content">
-                        <div class="wide">
-                            {{ img('projects-twitch-team.png', 'Team') }}
-                        </div><!-- end .wide -->
                         <article>
-                            <div class="two-thirds last">
-                                <h3>Process</h3>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                                <div class="third right twitch-chart">
+                            <h3>Process</h3>
+                            <div class="row">
+                                <div class="two-thirds twitch-stats">
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
+                                    <div><span>23%</span>{{ lipsum(n=1, html=False, max=4, min=2) }}</div>
+                                    <div><span>23%</span>{{ lipsum(n=1, html=False, max=4, min=2) }}</div>
+                                    <div><span>23%</span>{{ lipsum(n=1, html=False, max=4, min=2) }}</div>
+                                </div>
+                                <div class="third twitch-chart">
                                     {{ img('projects-twitch-survey.svg', 'Survey results') }}
                                 </div>
-                                <div class="twitch-stats">
-                                    <div>
-                                        <span>23%</span>
-                                        {{ lipsum(n=1, html=False, max=4, min=2) }}
+                            </div><!-- end .row -->
+                            <div class="row">
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-twitch-interview.png', 'Interviews') }}
                                     </div>
-                                    <div>
-                                        <span>23%</span>
-                                        {{ lipsum(n=1, html=False, max=4, min=2) }}
+                                    <h4>Interviews</h4>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
+                                </div>
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-twitch-personas.png', 'Personas') }}
                                     </div>
-                                    <div class="third">
-                                        <span>23%</span>
-                                        {{ lipsum(n=1, html=False, max=4, min=2) }}
+                                    <h4>Personas</h4>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
+                                </div>
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-twitch-userflow.png', 'Userflow') }}
                                     </div>
-                                </div><!-- end .twitch-stats -->
-                            </div>
-
-                            <!-- just templating
-                            <div class="half">
-                                <h6>.half</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="quarter">
-                                <h6>.quarter</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="quarter last">
-                                <h6>.quarter.last</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="two-thirds">
-                                <h6>.two-thirds</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="third last">
-                                <h6>.two-thirds.last</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="quarter">
-                                <h6>.quarter</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="three-quarters last">
-                                <h6>.three-quarters.last</h6>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                             end templating -->
-
-                            <div class="third">
-                                <div class="wide">
-                                    {{ img('projects-twitch-interview.png', 'Interviews') }}
+                                    <h4>Userflow</h4>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
                                 </div>
-                                <h4>Interviews</h4>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="third">
-                                <div class="wide">
-                                    {{ img('projects-twitch-personas.png', 'Personas') }}
+                            </div><!-- end .row -->
+                            <div class="row">
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-twitch-sketch.png', 'Sketches') }}
+                                    </div>
+                                    <h4>Sketches</h4>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
                                 </div>
-                                <h4>Personas</h4>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="third last">
-                                <div class="wide">
-                                    {{ img('projects-twitch-userflow.png', 'Userflow') }}
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-twitch-wireframe.png', 'Wireframes') }}
+                                    </div>
+                                    <h4>Wireframes</h4>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
                                 </div>
-                                <h4>Userflow</h4>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="third">
-                                <div class="wide">
-                                    {{ img('projects-twitch-sketch.png', 'Sketches') }}
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-twitch-testing.png', 'User testing') }}
+                                    </div>
+                                    <h4>User testing</h4>
+                                    <p class="pre-split">{{ lipsum(n=1, html=False) }}</p>
                                 </div>
-                                <h4>Sketches</h4>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="third">
-                                <div class="wide">
-                                    {{ img('projects-twitch-wireframe.png', 'Wireframes') }}
-                                </div>
-                                <h4>Wireframes</h4>
-                                <p>{{ lipsum(n=1, html=False) }}</p>
-                            </div>
-                            <div class="third last">
-                                <div class="wide">
-                                    {{ img('projects-twitch-testing.png', 'User testing') }}
-                                </div>
-                                <h4>User testing</h4>
-                                <p class="pre-split">{{ lipsum(n=1, html=False) }}</p>
-                            </div>
+                            </div><!-- end .row -->
                         </article>
                         <article class="no-split">
                             <h3>Deliver</h3>
@@ -147,11 +110,11 @@
                             <div class="half">
                                 <p>{{ lipsum(n=1, html=False) }}</p>
                             </div>
-                            <div class="wide">
-                                {{ img('projects-twitch-deliver.png', 'Deliver') }}
-                            </div>
                         </article>
                     </div><!-- end .content -->
+                    <div class="wide">
+                        {{ img('projects-twitch-deliver.png', 'Deliver') }}
+                    </div>
                 </div><!-- end #project-content -->
 
                 {% include '_suggestions.html' %}
