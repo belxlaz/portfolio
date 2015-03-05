@@ -1,19 +1,44 @@
 #about {
-  @include media($desktop) {
+  .work-interests { display: none }
+  @include media($tablet) {
     p {
       @include span-columns(8);
       @include shift(2);
       @include omega();
       text-align: center;
     }
-    article { @include clearfix }
-  }
-}
-
-.work-interests {
-  display: none;
-  @include media($tablet) {
-    display: block;
+    article {
+      @include clearfix;
+      border-bottom: 0;
+    }
+    .work-interests {
+      display: block;
+      background: transparent url(/static/imgs/work-interests.png) no-repeat center center;
+      background-size: cover;
+      padding: 3em 0;
+      color: $background-color;
+      text-align: center;
+      h2 {
+        text-transform: lowercase;
+        color: $background-color;
+      }
+      ul {
+        @include outer-container;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        @include span-columns(4);
+        text-transform: uppercase;
+        font: $subtitle-font;
+        font-size: 1em;
+      }
+      img {
+        display: block;
+        width: 38.2%;
+        margin: 0 auto;
+      }
+    }
   }
 }
 
