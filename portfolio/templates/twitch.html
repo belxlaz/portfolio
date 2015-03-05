@@ -1,16 +1,158 @@
 {% extends "_base.html" %}
 {% block content %}
 
-                <div id="project_header">
-                    <div class="wide">
-                        <img src="" alt="Twitch – The next Level">
-                    </div><!-- end .wide -->
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-twitch-cover.png', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Twitch – The Next Level
+                                    <span>Let users view and upload walkthroughs</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>UX Designer, Team Leader</dd>
+                                    <dt>Team partners</dt>
+                                    <dd>Paul Imes, Sunil Pithwa</dd>
+                                    <dt>Duration</dt>
+                                    <dd>2 weeks</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                        <div class="summary">
+                            <div class="content">
+                                <div class="briefing">
+                                    <h3>Briefing</h3>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
+                                </div><!-- end .briefing -->
+                                <div class="solution">
+                                    <h3>Solution</h3>
+                                    <p>{{ lipsum(n=1, html=False) }}</p>
+                                </div><!-- end .solution-->
+                            </div><!-- end .project-content -->
+                        </div><!-- end .summary -->
+                    </header>
+                </div><!-- end #project-header -->
+                
+                <div id="project-content">
                     <div class="content">
+                        <div class="wide">
+                            {{ img('projects-twitch-team.png', 'Team') }}
+                        </div><!-- end .wide -->
                         <article>
-                            <h2>Contacts</h2>
-                            <p>I am always interested in hearing from anybody who has suggestions for projects or just want to talk about user experience design in general. Feel free to get in touch and we can grab a coffee.</p>
+                            <div class="two-thirds stats last">
+                                <h3>Process</h3>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                                <div class="third right">
+                                    {{ img('projects-twitch-survey.svg', 'Survey results') }}
+                                </div>
+                                <div class="twitch-stats">
+                                    <div>
+                                        <span>23%</span>
+                                        {{ lipsum(n=1, html=False, max=4, min=2) }}
+                                    </div>
+                                    <div>
+                                        <span>23%</span>
+                                        {{ lipsum(n=1, html=False, max=4, min=2) }}
+                                    </div>
+                                    <div class="third">
+                                        <span>23%</span>
+                                        {{ lipsum(n=1, html=False, max=4, min=2) }}
+                                    </div>
+                                </div><!-- end .twitch-stats -->
+                            </div>
+
+                            <!-- just templating -->
+                            <div class="half">
+                                <h6>.half</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="quarter">
+                                <h6>.quarter</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="quarter last">
+                                <h6>.quarter.last</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="two-thirds">
+                                <h6>.two-thirds</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="third last">
+                                <h6>.two-thirds.last</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="quarter">
+                                <h6>.quarter</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="three-quarters last">
+                                <h6>.three-quarters.last</h6>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <!-- end templating -->
+
+                            <div class="third">
+                                <div class="wide">
+                                    {{ img('projects-twitch-interview.png', 'Interviews') }}
+                                </div>
+                                <h4>Interviews</h4>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="third">
+                                <div class="wide">
+                                    {{ img('projects-twitch-personas.png', 'Personas') }}
+                                </div>
+                                <h4>Personas</h4>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="third last">
+                                <div class="wide">
+                                    {{ img('projects-twitch-userflow.png', 'Userflow') }}
+                                </div>
+                                <h4>Userflow</h4>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="third">
+                                <div class="wide">
+                                    {{ img('projects-twitch-sketch.png', 'Sketches') }}
+                                </div>
+                                <h4>Sketches</h4>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="third">
+                                <div class="wide">
+                                    {{ img('projects-twitch-wireframe.png', 'Wireframes') }}
+                                </div>
+                                <h4>Wireframes</h4>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="third last">
+                                <div class="wide">
+                                    {{ img('projects-twitch-testing.png', 'User testing') }}
+                                </div>
+                                <h4>User testing</h4>
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
                         </article>
-                    </div><!-- end .content -->
-                </div><!-- end #contacts -->
+                    </div><!-- end .project-content -->
+                    <div class="content">
+                        <article class="no-split">
+                            <h3>Deliver</h3>
+                            <div class="half">
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                            <div class="half">
+                                <p>{{ lipsum(n=1, html=False) }}</p>
+                            </div>
+                        </article>
+                    </div><!-- end .project-content -->
+                </div><!-- end #project-content -->
+
+                {% include '_suggestions.html' %}
 
 {% endblock %}

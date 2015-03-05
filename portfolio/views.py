@@ -1,4 +1,4 @@
-from flask import abort, Blueprint, g, render_template
+from flask import abort, Blueprint, g, render_template, url_for
 from portfolio.projects import Project
 
 site = Blueprint('site', __name__, static_folder='static')
@@ -12,19 +12,24 @@ def index():
 
 
 # project pages
-@site.route('/<project>')
-def project(project):
+@site.route('/<key>')
+def portfolio(key):
 
     # check if project exists
-    if not projects.exist(project):
+    if not projects.exist(key):
         return abort(404)
 
     # load project info
-    g.title = projects[project]['title']
-    g.keywords = [k.split() for k in projects[project]['keywords'].split(',')]
-    template = '{}.html'.format(project)
+    project = projects.get(key)
+    g.title = project['title']
+    g.keywords = project['keywords']
+    g.cover = project['cover']
 
-    return render_template(template)
+    # generate template variables
+    template = '{}.html'.format(key)
+    suggestions = projects.suggestion(key, 6)
+
+    return render_template(template, project=project, suggestions=suggestions)
 
 
 # seo and browser
@@ -45,6 +50,7 @@ def title():
     # basic values
     name = 'Mabel Lazzarin'
     about = "{}'s Portfolio | UX & Visual Designer".format(name)
+    banner = 'cover.png'
     keywords = ['Mabel Lazzarin', 'ux designer', 'user experience designer',
                 'visual designer', 'user experience', 'london']
 
@@ -53,7 +59,7 @@ def title():
     title = '{} | {}'.format(subtitle, name) if subtitle else name
     description = '{} | {}'.format(subtitle, about) if subtitle else about
     [keywords.append(k) for k in g.get('keywords', [])]
-    banner = g.get('banner', 'file.png')
+    cover = g.get('cover', banner)
 
     # set page class
     page_class = 'home' if name == title else 'project'
@@ -62,7 +68,7 @@ def title():
     return {'name': name,
             'title': title,
             'description': description,
+            'cover': cover,
             'keywords': ', '.join(keywords),
-            'banner': banner,
             'page_class': page_class,
             'projects': projects}

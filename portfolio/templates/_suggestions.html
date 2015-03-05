@@ -1,0 +1,14 @@
+            {% if suggestions %}
+            <div id="suggestions">
+                <div class="content">
+                    <h5>Other projects</h5>
+                    <ul>
+                        {% for key in suggestions %}
+                        <li>
+                            <a href="/{{ key }}">{{ img(projects.all[key]['cover'], projects.all[key]['title']) }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div><!-- end .content -->
+            </div><!-- end li#suggestions -->
+            {% endif %}

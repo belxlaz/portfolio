@@ -6,7 +6,7 @@ $ ->
   $.window = $(window)
 
   # scroll to hash on load
-  animate_scroll_to location.hash if location.hash
+  animate_scroll_to location.hash if location.hash and $is_home
 
   # highlight menu (desktop only)
   menu_highlight()
@@ -98,19 +98,20 @@ scroll_map = ->
   }
 
 menu_highlight = ->
-  pos = $.window.scrollTop()
-  map = scroll_map()
-  if pos > map.contacts
-    menu_toggle_highlight 'contacts'
-  else if pos > map.projects
-    menu_toggle_highlight 'projects'
-  else if pos >= map.about
-    menu_toggle_highlight 'about'
-  else
-    $('.menu').find('a').removeClass 'active'
+  if $.is_home
+    pos = $.window.scrollTop()
+    map = scroll_map()
+    if pos > map.contacts
+      menu_toggle_highlight 'contacts'
+    else if pos > map.projects
+      menu_toggle_highlight 'projects'
+    else if pos >= map.about
+      menu_toggle_highlight 'about'
+    else
+      $('.menu').find('a').removeClass 'active'
 
 menu_toggle_highlight = (target) ->
-  if target != $.highlighted
+  if target != $.highlighted and $.is_home
     $.highlighted = target
     $('.menu').find('a').each ->
       href = $(this).attr 'href'

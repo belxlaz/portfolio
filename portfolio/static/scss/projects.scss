@@ -1,0 +1,100 @@
+.project {
+  h2, h3 {
+    color: $title-color;
+    font: $title-font;
+    font-size: 1em;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+#project-header {
+  h2 {
+    margin-top: 0;
+    span {
+      display: block;
+      font: $subtitle-font;
+      font-size: .8em;
+      font-style: italic;
+    }
+  }
+  dl {
+    @include clearfix;
+    font-size: .8em;
+    margin: 0;
+    padding: 1em 0;
+  }
+  dt, dd {
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+  dt {
+    clear: left;
+    color: $title-color;
+    margin-right: .2em;
+    &:after { content: ':' }
+  }
+  .info {
+    padding-top: 1em;
+    background-color: $footer-background-color;
+  }
+  .wide {
+    background-color: $footer-background-color;
+  }
+}
+
+#project-content {
+  h4 {
+    color: $subtitle-color;
+    font: $subtitle-font;
+    margin: .618em 0 0 0;
+  }
+  .content {
+    .wide {
+      background-size: cover;
+      box-sizing: content-box; 
+      left: -16px;
+      padding: 0 16px;
+      position: relative;
+      img { visibility: hidden }
+      @include media($desktop) {
+        box-sizing: border-box;
+        left: 0;
+        padding: 0;
+        position: static;
+        img { visibility: visible }
+      }
+    }
+  }
+  @include media($tablet) {
+    .whole { @include span-columns(12) }
+    .three-quarters { @include span-columns(9) }
+    .two-thirds { @include span-columns(8) }
+    .half { @include span-columns(6) }
+    .third { @include span-columns(4) }
+    .quarter { @include span-columns(3) }
+    .last { @include omega() }
+  }
+}
+
+#suggestions {
+  background-color: $footer-background-color;
+  padding: 1em 0;
+  h5 {
+    color: $title-color;
+    font: $title-font;
+    font-size: 1em;
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    @include span-columns(4);
+    @include media($tablet) { @include span-columns(2) }
+    margin-top: .618em;
+    &:nth-of-type(4n), &:nth-of-type(5n), &:nth-of-type(6n) { display: none }
+    @include media($tablet) { &:nth-of-type(4n), &:nth-of-type(5n), &:nth-of-type(6n) { display: block } }
+  }
+}

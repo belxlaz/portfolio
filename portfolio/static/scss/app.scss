@@ -16,5 +16,10 @@ $wide: new-breakpoint(min-width 1800px);
 // import app styles
 @import "tags";
 @import "classes";
-@import "ids";
 @import "animations";
+
+// import modules
+@import "base.scss";
+@import "home.scss";
+@import "projects.scss";
+@import "project_specific.scss";

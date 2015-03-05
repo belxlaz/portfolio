@@ -1,0 +1,18 @@
+// twitch
+#project-content {
+  .twitch-stats {
+    @include clearfix;
+    font-size: .8em;
+    text-align: center;
+    span {
+      color: $title-color;
+      display: block;
+      font-size: 1.618em;
+      font-weight: $bold-weight;
+    }
+    div {
+      width: 33%;
+      float: left;
+    }
+  }
+}

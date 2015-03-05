@@ -1,0 +1,115 @@
+#top {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  @include media($desktop) { background-color: $menu-background-color }
+  h1, nav {
+    float: left;
+    height: 1em;
+    margin-bottom: .2em;
+    margin-top: .3em;
+    width: 1em;
+    @include media($desktop) {
+      height: 1.618em;
+      margin-bottom: .382em;
+      margin-top: .382em;
+      width: 1.618em;
+    }
+  }
+  nav {
+    float: right;
+    margin-top: .6em;
+    @include media($desktop) {
+      margin-top: 1em;
+      width: 60%;
+    }
+  }
+}
+
+.menu {
+  ul {
+    display: none;
+    @include media($desktop) {
+      display: block;
+      padding: 0;
+      text-align: right;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        margin-right: 1.618em;
+        &:last-child { margin-right: 0 }
+      }
+      a {
+        @include transition(color 333ms, border-color 333ms);
+        border-bottom: .05em solid transparent;
+        color: $disabled-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        &.active, &:hover {
+          color: $highlight-color;
+          border-bottom-color: $highlight-color;
+        }
+        &:hover {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.menu-mobile {
+  background-color: $menu-background-color;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  ul {
+    @include transform(translateY(-50%));
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 50%;
+  }
+  li {
+    font: $title-font;
+    list-style-type: none;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
+    &:last-child { margin-bottom: 0 }
+  }
+  a {
+    color: $title-color;
+    text-decoration: none;
+  }
+}
+
+body {
+  #footer {
+    background-color: $footer-background-color;
+    padding: .618em 0;
+    text-align: center;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline;
+      margin-right: 1em;
+      &:last-child { margin-right: 0 }
+      img { width: 2em }
+      a {
+        @include transition(opacity 333ms);
+        opacity: 1;
+        &:hover { opacity: .6 }
+      }
+    }
+  }
+  &.home #footer {
+    background-color: transparent;
+    border-bottom: 1em solid $footer-background-color;
+    padding-bottom: 3em;
+  }
+  &.project #footer { background-color: transparent }
+}

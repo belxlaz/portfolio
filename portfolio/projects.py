@@ -52,12 +52,15 @@ class Project(object):
                 output.append(key)
         return output
 
-    def suggestion(self, list_of_keywords, limit=False):
-
+    def suggestion(self, key, limit=False):
+        
         # get all suggestions
         filtered = list()
-        for keyword in list_of_keywords:
-            filtered.extend(self.filter(keyword))
+        for keyword in self.all[key]['keywords']:
+            projects = self.filter(keyword)
+            for project in projects:
+                if project not in filtered and project != key:
+                    filtered.append(project)
         if not limit:
             limit = len(filtered)
 

@@ -9,7 +9,8 @@ js:
       filters: coffeescript
       contents:
         - coffeescript/menu.coffee
-        - coffeescript/projects.coffee
+        - coffeescript/gallery.coffee
+        - coffeescript/project.coffee
         - coffeescript/svg2png.coffee
 
 css:
@@ -23,6 +24,9 @@ css:
     - scss/_classes.scss
     - scss/_colors.scss
     - scss/_fonts.scss
-    - scss/_ids.scss
     - scss/_mixins.scss
     - scss/_tags.scss
+    - scss/base.scss
+    - scss/home.scss
+    - scss/projects.scss 
+    - scss/project_specific.scss 

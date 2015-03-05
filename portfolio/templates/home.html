@@ -3,7 +3,7 @@
 
                 <div id="about">
                     <div class="wide vertical-crop">
-                        <img src="{{ url_for('static', filename='imgs/cover.png') }}" alt="{{ name }}"> 
+                        <img src="{{ url_for('site.static', filename='imgs/cover.png') }}" alt="{{ name }}"> 
                     </div><!-- end .wide -->
                     <div class="content">
                         <article>
@@ -26,36 +26,13 @@
                                 <li data-keywords="trend">Trend<br>Research</li>
                             </ul>
                             <ul class="gallery">
-                                <li class="ux">
-                                    <a href="">
-                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=ux1">
+                                {% for key in projects.order %}
+                                <li class="{{ projects.all[key]['keywords']|join(' ') }}">
+                                    <a href="/{{ key }}">
+                                        <img alt="{{ projects.all[key]['title'] }}" src="{{ url_for('site.static', filename='imgs/{}'.format(projects.all[key]['cover'])) }}">
                                     </a>
                                 </li>
-                                <li class="graphic">
-                                    <a href="">
-                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=graphic">
-                                    </a>
-                                </li>
-                                <li class="ux">
-                                    <a href="">
-                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=ux2">
-                                    </a>
-                                </li>
-                                <li class="ux">
-                                    <a href="">
-                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=ux1">
-                                    </a>
-                                </li>
-                                <li class="graphic">
-                                    <a href="">
-                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=graphic">
-                                    </a>
-                                </li>
-                                <li class="ux">
-                                    <a href="">
-                                        <img alt="Nome do projeto" src="http://placehold.it/512&text=ux2">
-                                    </a>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </article>
                     </div><!-- end .content -->
