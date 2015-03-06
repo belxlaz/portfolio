@@ -96,7 +96,7 @@
 }
 
 #contacts {
-  @include media($desktop) {
+  @include media($tablet) {
     article {
       @include span-columns(8);
       @include shift(2);
