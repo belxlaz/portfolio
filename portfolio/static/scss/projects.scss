@@ -1,5 +1,5 @@
 .project {
-  h2, h3 {
+  h2, h3, h5 {
     color: $title-color;
     font: $title-font;
     font-size: 1.618em;
@@ -86,13 +86,12 @@
 }
 
 #suggestions {
+  @include transform(translateY(-.2em));
   background-color: $footer-background-color;
   padding: 1em 0;
   h5 {
-    color: $title-color;
-    font: $title-font;
-    font-size: 1em;
     margin: 0;
+    text-align: center;
   }
   ul {
     margin: 0;

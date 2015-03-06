@@ -22,7 +22,7 @@ $ ->
 
   # append burger and add `loaded` classes
   $('#menu').addClass('loaded').append burger_tag
-  $('.menu-mobile').addClass 'loaded' 
+  $('.menu-mobile').addClass 'loaded'
 
   # mobile menu toggle
   $('#burger').click toggle_menu

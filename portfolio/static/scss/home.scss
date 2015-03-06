@@ -3,6 +3,7 @@
   @include media($tablet) {
     p {
       @include span-columns(6);
+      margin-top: 0;
     }
     article {
       @include clearfix;
