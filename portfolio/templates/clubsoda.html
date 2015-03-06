@@ -1,0 +1,127 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-clubsoda-cover.png', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Club Soda
+                                    <span>Social network to reduce or stop drinking</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>UX Design, Graphic Design</dd>
+                                    <dt>Team partners</dt>
+                                    <dd>Christine Phan, Philippe Campagne, Luis Klefsjo</dd>
+                                    <dt>Duration</dt>
+                                    <dd>2,5 weeks</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                        <div class="summary">
+                            <div class="content">
+                                <div class="briefing">
+                                    <h3>Briefing</h3>
+                                    <p>Club Soda is an online support group for people who want to change their relationship to alcohol.  Our final project of UX Design course at General Assembly was design an “expert and perks marketplace” to their currently website, including a searchable database which members could use to find experts related with their goals. At the moment, they are listed on their website with a photo, a very short description and an external link to experts’ websites.</p>
+                                </div><!-- end .briefing -->
+                                <div class="solution">
+                                    <h3>Solution</h3>
+                                    <p>We decided to go further the briefing and created elements to increase members and experts engagement,   through a social media approach where a delightful community and professional support goes hand in hand. Our deliver consisted in: create a welcoming landing page for both experts and members; allow experts to sign up directly to the website creating his profile page; encourage experts to upload and edit content (events, texts, videos).</p>
+                                </div><!-- end .solution-->
+                            </div><!-- end .project-content -->
+                        </div><!-- end .summary -->
+                    </header>
+                </div><!-- end #project-header -->
+                
+                <div id="project-content">
+                    <div class="wide">
+                        <p>{{ img('projects-clubsoda-team.png', 'Team') }}</p>
+                    </div><!-- end .wide -->
+                    <div class="content">
+                        <article>
+                            <div class="row">
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-clubsoda-competitors.png', 'Competive Analysis') }}
+                                    </div>
+                                    <h4>Competive Analysis</h4>
+                                    <p>Many websites and apps that offers support to people stopping drinking have a gloomy, clinical and guilt-bearing approach. We expanded our benchmark into meeting and socialising websites to inspire us to encourage people to interact online.</p>
+                                </div>
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-clubsoda-research.png', 'User Research') }}
+                                    </div>
+                                    <h4>User Research</h4>
+                                    <p>To help us to understand the Club Soda target, first we created an online survey asking what people are looking for in a community when they decided for a big behaviour change in their lives. Next we conducted in-depth interviews with 6 members and 5 Club Soda experts.</p>
+                                </div>
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-clubsoda-personas.png', 'Personas') }}
+                                    </div>
+                                    <h4>Personas</h4>
+                                    <p>Analysing the data from the survey and interviews we identified some patterns and created personas to make tangible our findings. Julia represents the members side and Angelo the experts. Their needs, pain points and habits drived our decisions.</p>
+                                </div>
+                            </div><!-- end .row -->
+                            <div class="row">
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-clubsoda-userjorney.png', 'User Journey') }}
+                                    </div>
+                                    <h4>User Journey</h4>
+                                    <p class="pre-split">We mapped out Club Soda's current interaction for members and experts in their first access to the site. The lower points are the worst experiences during their journeys. These graphics became our guideline for feature improvements.</p>
+                                </div>
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-clubsoda-studio.png', 'Design Studio') }}
+                                    </div>
+                                    <h4>Design Studio</h4>
+                                    <p class="pre-split">In a workshop with Club Soda founder, developer, member and enthusiasts we started the feature prioritisation and drawn the first sketches in a method where everybody participates in the design process.</p>
+                                </div>
+                                <div class="third">
+                                    <div class="wide">
+                                        {{ img('projects-clubsoda-testing.png', 'User testing') }}
+                                    </div>
+                                    <h4>User testing</h4>
+                                    <p class="pre-split">From paper to high fidelity digital prototyping, 13 users tested our design, in 5 rounds of iterations based in their feedbacks. After further iterations and very positive avaliations, we proceed to our deliverable prototype.</p>
+                                </div>
+                            </div><!-- end .row -->
+                        </article>
+                        <article class="no-split">
+                            <h3>Deliver</h3>
+                            <div class="half">
+                                <h4>Registration</h4>
+                                <p class="pre-split">To create an enjoyable experience since the beginning we redesign the signup process with fewer steps. Integrating the experts registration and setting keywords for interests, hobbies and things they would like more information on.</p>
+                            </div>
+                            <div class="half">
+                                <h4>Market Place</h4>
+                                <p class="pre-split">To create an enjoyable experience since the beginning we redesign the signup process with fewer steps. Integrating the experts registration and setting keywords for interests, hobbies and things they would like more information on.</p>
+                            </div>
+                        </article>
+                    </div><!-- end .content -->
+                    <div class="wide">
+                        {{ img('projects-clubsoda-deliver2.png', 'Regitration') }}
+                    </div>
+                    <div class="content">
+                        <article class="no-split">
+                            <div class="half">
+                                <h4>Landing Page</h4>
+                                <p class="pre-split">A complete new layout was suggested to centralise meaningful contents for each user. On the top an image carousel shows featured Club Soda campaigns. Then a display with appointments, goal and achievements creates a gamification approach, showing rewards of been part of the community. This page shows events, other members, events, experts and contents related with the keywords you set.</p>
+                            </div>
+                            <div class="half">
+                                <h4>Expert Page</h4>
+                                <p class="pre-split">A complete new layout was suggested to centralise meaningful contents for each user. On the top an image carousel shows featured Club Soda campaigns. Then a display with appointments, goal and achievements creates a gamification approach, showing rewards of been part of the community. This page shows events, other members, events, experts and contents related with the keywords you set.</p>
+                            </div>
+                        </article>
+                        </div><!-- end .content -->
+                    <div class="wide">
+                        {{ img('projects-clubsoda-deliver1.png', 'Deliver') }}
+                    </div>     
+                </div><!-- end #project-content -->
+
+                {% include '_suggestions.html' %}
+
+{% endblock %}
