@@ -4,7 +4,8 @@
 *.log
 portfolio/static/.webassets-cache/
 
-# bower and compiled/processed assets
+# node, bower and compiled/processed assets
+node_modules/
 portfolio/static/bower/
 portfolio/static/*.js
 portfolio/static/*.css
