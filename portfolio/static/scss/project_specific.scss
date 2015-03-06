@@ -28,3 +28,24 @@
     }
   }
 }
+
+// ares
+#project-content {
+  .ares-interface {
+    @include media($tablet) {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
+  .ares-cfm {
+    @include media($tablet) {
+      margin-left: 10%;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+  .ares-top {
+    @include transform(translateY(.2em));
+    z-index: 0;
+  }
+}

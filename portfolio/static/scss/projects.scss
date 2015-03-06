@@ -59,19 +59,21 @@
     font-size: 1.618em;
     margin: .618em 0 0 0;
   }
-  .wide {
-    background-size: cover;
-    box-sizing: content-box; 
-    left: -16px;
-    padding: 0 16px;
-    position: relative;
-    img { visibility: hidden }
-    @include media($tablet) {
-      box-sizing: border-box;
-      left: 0;
-      padding: 0;
-      position: static;
-      img { visibility: visible }
+  .content {
+    .wide {
+      background-size: cover;
+      box-sizing: content-box; 
+      left: -16px;
+      padding: 0 16px;
+      position: relative;
+      img { visibility: hidden }
+      @include media($tablet) {
+        box-sizing: border-box;
+        left: 0;
+        padding: 0;
+        position: static;
+        img { visibility: visible }
+      }
     }
   }
   @include media($tablet) {

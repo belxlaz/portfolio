@@ -1,0 +1,71 @@
+    {% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-ares-cover.png', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Brastemp Ative!
+                                    <span>A global washer & dryer machine project</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic Design, CFM, UI/UX Design</dd>
+                                    <dt>Team</dt>
+                                    <dd>Whirlpool - Industrial Design (Global)</dd>
+                                    <dt>Awards</dt>
+                                    <dd>IF Design</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                        <div class="summary">
+                            <div class="content">
+                                <div class="briefing">
+                                    <h3>Briefing</h3>
+                                    <p>This product was a Whirlpool Global project which brought together the Brazilian, Asian and European Design teams. The main challenge was to combine the consumers needs from different cultures in a single product platform.</p>
+                                </div><!-- end .briefing -->
+                                <div class="solution">
+                                    <h3>Solution</h3>
+                                    <p>Design to be simple and elegant, with outstanding features, developed through constant assessments with consumers, as usability tests, perceived quality and heuristic evaluations. Based in each country differences the CFM, graphic design and the UI behaviour were adapted.</p>
+                                </div><!-- end .solution-->
+                            </div><!-- end .project-content -->
+                        </div><!-- end .summary -->
+                    </header>
+                </div><!-- end #project-header -->
+                
+                <div id="project-content">
+                    <div class="wide">
+                        {{ img('projects-ares-interface.png', 'Interface') }}
+                    </div><!-- end .wide -->
+                    <div class="content ares-interface">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Interface</h3>
+                                    <p>A central white backlit knob with surrounding luminesce was embedded to an elegant and slim user interface. The emotinal experience is enhanced by fading lights that follows the status of the washing and drying cycles. The dead-front display with touch sensors brings cutting-edge technologies to traditional white goods. The UI was projected to help even inexperienced users in choosing the better settings for their clothes.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>                
+                    <div class="wide">
+                        {{ img('projects-ares-colours.png', 'Colours') }}
+                    </div>         
+                    <div class="content ares-cfm">
+                        <div class="third">
+                            <h3>Colours, Finishes and Materials</h3>
+                            <p>In terms of colors, Brastemp Ative! offers 3 CMF options which easily blend into any home environment: Global White, Satin Chrome and All Black.</p>
+                        </div>
+                    </div>
+                    <div class="wide ares-top">
+                        {{ img('projects-ares-top.png', 'Top view') }}
+                    </div>
+                    <div class="wide">
+                        {{ img('projects-ares-test.png', 'Usability test') }}
+                    </div>
+                </div><!-- end #project-content -->
+                {% include '_suggestions.html' %}
+{% endblock %}
