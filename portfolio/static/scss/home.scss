@@ -2,10 +2,7 @@
   .work-interests { display: none }
   @include media($tablet) {
     p {
-      @include span-columns(8);
-      @include shift(2);
-      @include omega();
-      text-align: center;
+      @include span-columns(6);
     }
     article {
       @include clearfix;
@@ -20,7 +17,7 @@
       text-align: center;
       h2 {
         color: $background-color;
-        text-transform: lowercase;
+        margin-top: 0;
       }
       ul {
         @include outer-container;
@@ -29,8 +26,8 @@
       }
       li {
         @include span-columns(4);
-        font-size: 1em;
         font: $subtitle-font;
+        font-size: 1em;
         text-transform: uppercase;
       }
       img {
