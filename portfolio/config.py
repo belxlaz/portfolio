@@ -19,7 +19,10 @@ NEAT = path.join(STATIC, 'bower/neat/app/assets/stylesheets')
 SCSS = path.join(STATIC, 'scss')
 PYSCSS_LOAD_PATH = [BOURBON, NEAT, SCSS]
 WEBASSETS_LOAD_PATH = [STATIC]
+COFFEESCRIPT_BIN = config('COFFEESCRIPT_BIN', default=False)
 
+# google analytics user id
+GOOGLE_ANALYTICS = config('GOOGLE_ANALYTICS', default=False)
 
 # error logging
 LOG = path.join(path.dirname(BASEDIR), 'errors.log')
