@@ -24,7 +24,6 @@ def index():
 
 # project pages
 @site.route('/<key>')
-@minified
 def portfolio(key):
 
     # check if project exists
