@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-retro-cover.png', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Brastemp Retrô
+                                    <span>A fridge inspired by the past</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic Design</dd>
+                                    <dt>Team</dt>
+                                    <dd>Whirlpool - Industrial Design (Brazil)</dd>
+                                    <dt>Awards</dt>
+                                    <dd>IDSA IDEA</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                        <div class="summary">
+                            <div class="content">
+                                <div class="briefing">
+                                    <h3>Briefing</h3>
+                                    <p>The graphic project applied to Brastemp Retro’s fridge propose a revival of icons of the brand's history – such as the Eskimo character applied to the panel and the Brastemp badge of the 50s - with a contemporary reinterpretation.</p>
+                                </div><!-- end .briefing -->
+                                <div class="solution">
+                                    <h3>Solution</h3>
+                                    <p>All the graphic elements work with colours, fonts and pictograms inspired by the universe of appliances from the past.</p>
+                                </div><!-- end .solution-->
+                            </div><!-- end .project-content -->
+                        </div><!-- end .summary -->
+                    </header>
+                </div><!-- end #project-header -->
+                <div class="wide">
+                    {{ img('projects-retro-set.png', 'Colours') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-retro-details.png', 'Details') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-retro-skimo.png', 'Panel') }}
+                </div><!-- end .wide -->
+        {% include '_suggestions.html' %}
+{% endblock %}
