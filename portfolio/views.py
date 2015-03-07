@@ -7,8 +7,8 @@ try:
 except NameError:
     pass
 
-from flask import abort, Blueprint, g, render_template
-from portfolio.minify import minified
+from flask import abort, Blueprint, g
+from portfolio.minify import render_minified
 from portfolio.projects import Project
 
 site = Blueprint('site', __name__, static_folder='static')
@@ -17,9 +17,8 @@ projects = Project()
 
 # home
 @site.route('/')
-@minified
 def index():
-    return render_template('home.html')
+    return render_minified('home.html')
 
 
 # project pages
@@ -40,7 +39,7 @@ def portfolio(key):
     template = '{}.html'.format(key)
     suggestions = projects.suggestion(key, 6)
 
-    return render_template(template, project=project, suggestions=suggestions)
+    return render_minified(template, project=project, suggestions=suggestions)
 
 
 # seo and browser
