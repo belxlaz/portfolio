@@ -19,10 +19,7 @@ $ ->
     bar = document.createElement('div')
     bar.setAttribute 'class', 'bar'
     burger_tag.appendChild bar
-
-  # append burger and add `loaded` classes
-  $('#menu').addClass('loaded').append burger_tag
-  $('.menu-mobile').addClass 'loaded'
+  $('#menu').append burger_tag
 
   # mobile menu toggle
   $('#burger').click toggle_menu

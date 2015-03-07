@@ -7,6 +7,10 @@
     @include animation(show-mobile-menu 333ms cubic-bezier(1, 0, 0, 1) forwards);
     height: 100%;
   }
+  &.loaded {
+    @include animation(none);
+    ul { display: none }
+  }
 }
 
 @include allkeyframes(show-mobile-menu) {

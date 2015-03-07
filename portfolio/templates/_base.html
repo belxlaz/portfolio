@@ -58,7 +58,7 @@
                                 <img src="{{ url_for('site.static', filename='imgs/logo.svg') }}" alt="{{ name }}">
                             </a>
                         </h1>
-                        <nav class="menu" id="menu">
+                        <nav class="menu loaded" id="menu">
                             {% include '_menu.html' %}
                         </nav>
                     </header>
@@ -99,7 +99,7 @@
 
         </div><!-- end #page -->
 
-        <nav class="menu-mobile">
+        <nav class="menu-mobile loaded">
             {% include '_menu.html' %}
         </nav>
 
