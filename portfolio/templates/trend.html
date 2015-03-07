@@ -1,0 +1,81 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-trend-cover.jpg', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Trend Report
+                                    <span>Designing future scenarios</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Founder, Trend Researcher,and Workshop Facilitator</dd>
+                                    <dt>Participants</dt>
+                                    <dd>More than 250 people</dd>
+                                    <dt>Editions</dt>
+                                    <dd>11 workshops hosted in 7 different cities.</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                    </header>
+                </div><!-- end #project-header -->
+                
+                <div id="project-content">
+                    <div class="content ares-interface">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Project</h3>
+                                    <p class="pre-split">A series of workshops on Trend Report design and execution. This activity shared examples of exploratory research showing how emerging trends can influence particular audiences and brands. The analysis of the research material allowed the group to design future scenarios as well as innovative products and services.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>                
+                    <div class="wide">
+                        <p>{{ img('projects-trend-slides.jpg', 'Trends') }}</p>
+                    </div><!-- end .wide -->
+                    <div class="content">
+                        <article class="no-split"> 
+                            <div class="row">
+                                <div class="third">
+                                    <h4>Trend Concepts</h4>
+                                    <p>A pinch of theory to introduce the subject, bringing some references to explain the main concepts and common terms.</p>
+                                </div>
+                                <div class="third">
+                                    <h4>Research Sources</h4>
+                                    <p>A talk about some of the most influential trend research centers and how is important to leave a office to discover and feel emerging trends.</p>
+                                </div>
+                                <div class="third">
+                                    <h4>Narrative and Scenarios</h4>
+                                    <p class="pre-split">Time to organize the information, naming movements and find arguments to strengthen the trend scope.</p>
+                                </div>
+                            </div><!-- end .row -->
+                            <div class="row">
+                                <div class="third">
+                                    <h4>Observing People</h4>
+                                    <p>More important than market analysis is to research people and their behavior. Even without delving too much in this topic, it’s possible to verify the difference it makes when creating products and experiences.</p>
+                                </div>
+                                <div class="third">
+                                    <h4>How to create Trend Reports</h4>
+                                    <p class="pre-split">Where we will see real Trend Reports structures: the most simple examples, as a daily resource, even the most complex, which are in themselves, the final delivery.</p>
+                                </div>
+                                <div class="third">
+                                    <h4>Workshop</h4>
+                                    <p class="pre-split">To test the new learning, an exercise to analyze dozens of emerging trends and how they could lead future scenarios. The results were innovative solutions to improve real problems for each city that was hosting the workshop.</p>
+                                </div>
+                            </div><!-- end .row -->
+                        </article>
+                    </div><!-- end .content -->
+                    <div class="wide">
+                        {{ img('projects-trend-workshop.jpg', 'Workshops') }}
+                    </div>     
+                </div><!-- end #project-content -->
+
+                {% include '_suggestions.html' %}
+
+{% endblock %}
