@@ -1,25 +1,29 @@
 clubsoda:
     title: Club Soda
+    tagline: Social network to reduce or stop drinking
     keywords: ux, graphic
     cover: projects-clubsoda.jpg
 
 twitch:
     title: Twitch – The Next Level
+    tagline: Let users view and upload walkthroughs
     keywords: ux, graphic
     cover: projects-twitch.jpg
 
 trend:
     title: Trend Report
+    tagline: Designing future scenarios
     keywords: trend, graphic
     cover: projects-trend.jpg
 
 ares:
     title: Brastemp Ative!
+    tagline: A global washer & dryer machine project
     keywords: ux, graphic
     cover: projects-ares.jpg
 
 retro:
     title: Brastemp Retrô
+    tagline: A fridge inspired by the past
     keywords: graphic
     cover: projects-retro.jpg
-
