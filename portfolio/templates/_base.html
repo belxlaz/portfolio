@@ -107,10 +107,8 @@
         <script src="{{ ASSET_URL }}"></script>
         {% endassets %}
 
-        {% if not config['DEBUG'] %}
-        {% if config['GOOGLE_ANALYTICS'] %}
+        {% if config['INSERT_GOOGLE_ANALYTICS'] and 'mabel.ml' in request.url %}
         <script>ga('create', '{{ config['GOOGLE_ANALYTICS'] }}', 'auto'); ga('send', 'pageview');</script>
-        {% endif %}
         {% endif %}
 
     </body>
