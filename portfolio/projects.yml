@@ -13,7 +13,7 @@ twitch:
 trend:
     title: Trend Report
     tagline: Designing future scenarios
-    keywords: trend, graphic
+    keywords: trend
     cover: projects-trend.jpg
 
 ares:
@@ -27,3 +27,9 @@ retro:
     tagline: A fridge inspired by the past
     keywords: graphic
     cover: projects-retro.jpg
+
+expedicao:
+    title: Expedição Liberdade
+    tagline: Alternatives for education
+    keywords: ux, trend
+    cover: projects-exp.jpg
