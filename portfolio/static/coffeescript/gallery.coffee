@@ -1,35 +1,27 @@
 $ ->
 
-  # save the initial status of the gallery
-  $.projects = $('.gallery').clone()
-
   # enable filter
   $('.filter').find('li').click ->
 
-    # toggle class
+    # toggle filter menu class
     $(this).parent().find('li').removeClass 'active'
     $(this).addClass 'active'
 
     # get keywords
-    target = $(this).attr('data-keywords').replace ' ', ''
-    keywords = if target.indexOf(',') then target.split(',') else [target]
+    keywords = $(this).attr('data-keywords').split /\s*,\s*/
     
     # hide all projects
-    projects = $('.gallery')
-    projects.fadeOut {
+    $('.gallery').fadeOut {
       complete: ->
         
-        # replace gallery with the original one
-        $(this).html $.projects.html()
-
         # filter
-        projects.find('li').each ->
+        $(this).find('li').each ->
           classes = $(this).attr('class').split ' '
           intersection = array_intersection keywords, classes
-          $(this).remove() if intersection.length == 0
+          if intersection.length then $(this).show() else $(this).hide()
   
-        # show all projects
-        projects.fadeIn()
+        # show gallery
+        $(this).fadeIn()
     }
 
 array_intersection = (a, b) ->
