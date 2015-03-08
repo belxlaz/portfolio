@@ -6,14 +6,14 @@ $ ->
   # enable filter
   $('.filter').find('li').click ->
 
-    # toggle class
+    # toggle filter link classes
     $(this).parent().find('li').removeClass 'active'
     $(this).addClass 'active'
 
     # get keywords
     keywords = $(this).attr('data-keywords').split /\s*,\s*/
     
-    # hide all projects
+    # hide gallery
     $('.gallery').fadeOut {
       complete: ->
         
@@ -26,7 +26,7 @@ $ ->
           intersection = array_intersection keywords, classes
           $(this).remove() if intersection.length == 0
   
-        # show all projects
+        # show gallery
         $(this).fadeIn()
     }
 
