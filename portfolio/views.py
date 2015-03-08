@@ -33,8 +33,8 @@ def portfolio(key):
     # load project info
     project = projects.get(key)
     g.title = project['title']
-    g.keywords = project['keywords']
     g.cover = project['cover']
+    g.tagline = project['tagline']
 
     return render_minified('{}.html'.format(key),
                            project=project,
@@ -68,16 +68,14 @@ def title():
     # basic values
     name = 'Mabel Lazzarin'
     about = "{}'s Portfolio | UX & Visual Designer".format(name)
-    banner = 'cover.png'
-    keywords = ['Mabel Lazzarin', 'ux designer', 'user experience designer',
-                'visual designer', 'user experience', 'london']
+    image = 'cover.jpg'
 
     # load page specific values
     subtitle = g.get('title', None)
+    tagline = g.get('tagline', None)
     title = '{} | {}'.format(subtitle, name) if subtitle else name
-    description = '{} | {}'.format(subtitle, about) if subtitle else about
-    [keywords.append(k) for k in g.get('keywords', [])]
-    cover = g.get('cover', banner)
+    description = '{} | {}'.format(subtitle, tagline) if tagline else about
+    cover = g.get('cover', image)
 
     # set page class
     page_class = 'home' if name == title else 'project'
@@ -87,5 +85,4 @@ def title():
             'title': title,
             'description': description,
             'cover': cover,
-            'keywords': ', '.join(keywords),
             'page_class': page_class}
