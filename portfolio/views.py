@@ -1,12 +1,3 @@
-# coding: utf-8
-
-try:
-    import sys
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
-except NameError:
-    pass
-
 from flask import abort, Blueprint, g
 from portfolio.minify import render_minified
 from portfolio.projects import Project
