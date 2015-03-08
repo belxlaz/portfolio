@@ -50,10 +50,6 @@
                                 <li class="{{ projects.all[key]['keywords']|join(' ') }}">
                                     <a href="/{{ key }}">
                                         <img alt="{{ projects.all[key]['title'] }}" src="{{ url_for('site.static', filename='imgs/{}'.format(projects.all[key]['cover'])) }}">
-                                        <div class="description">
-                                            <h5>{{ projects.all[key]['title'] }}</h5>
-                                            <h6>{{ projects.all[key]['tagline'] }}</h6>
-                                        </div><!-- end .description -->
                                     </a>
                                 </li>
                                 {% endfor %}
