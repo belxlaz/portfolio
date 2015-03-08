@@ -31,12 +31,6 @@
 
 // ares
 #project-content {
-  .ares-interface {
-    @include media($tablet) {
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-  }
   .ares-cfm {
     @include media($tablet) {
       margin-left: 10%;

@@ -83,6 +83,10 @@
     .half { @include span-columns(6) }
     .third { @include span-columns(4) }
     .quarter { @include span-columns(3) }
+    .centered {
+      @include span-columns(10);
+      @include shift(1);
+    }
   }
 }
 
