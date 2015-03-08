@@ -9,7 +9,7 @@ class Project(object):
     def __init__(self, path='projects.yml', root=False):
 
         # main veriables
-        self.all = dict()
+        self.raw = dict()
         self.order = list()
 
         # set root
@@ -22,56 +22,81 @@ class Project(object):
             with open(full_path) as file_handler:
                 self.order = self.__get_order(file_handler)
                 file_handler.seek(0)
-                self.all = yaml.load(file_handler.read())
+                self.raw = yaml.load(file_handler.read())
 
         # convert keywords to list
-        if self.all:
-            for key in self.all.keys():
-                project = self.all[key]
+        if self.raw:
+            for key in self.raw.keys():
+                project = self.raw[key]
                 parsed = [k.strip() for k in project['keywords'].split(',')]
                 project['keywords'] = parsed
 
+        # order all projects in one list
+        self.all = self.ordered()
+
     def get(self, key):
-        if self.all:
-            output = self.all.get(key, None)
+        if self.raw:
+            output = self.raw.get(key, None)
             if output:
                 output['key'] = key
             return output
         return None
 
+    def ordered(self, keys=False):
+        if not keys:
+            keys = self.order
+        return [self.get(k) for k in keys]
+
     def exist(self, key):
-        if self.all:
-            if key in self.all.keys():
+        if self.raw:
+            if key in self.raw.keys():
                 return True
         return False
 
     def filter(self, keyword):
         output = list()
-        for key in self.order:
-            project = self.all[key]
-            if keyword in project['keywords']:
-                output.append(key)
+        if self.raw:
+            for key in self.order:
+                if keyword in self.raw[key]['keywords']:
+                    output.append(key)
         return output
 
     def suggestion(self, key, limit=False):
 
         # get all suggestions
         filtered = list()
-        for keyword in self.all[key]['keywords']:
-            projects = self.filter(keyword)
-            for project in projects:
-                if project not in filtered and project != key:
-                    filtered.append(project)
+        if self.raw:
+            for keyword in self.raw[key]['keywords']:
+                for project in self.filter(keyword):
+                    if project not in filtered and project != key:
+                        filtered.append(project)
         if not limit:
             limit = len(filtered)
 
-        # randomize
+        # randomize and crop
+        print(limit)
+        output = self.__shuffle(filtered, limit)
+
+        # complete with other categories (if needed)
+        if len(output) < limit:
+            remaining = limit - len(output)
+            alternatives = list(set(self.order) - set(output))
+            output.extend(self.__shuffle(alternatives, remaining))
+            output = self.__shuffle(output)
+
+        return self.ordered(output)
+
+    @staticmethod
+    def __shuffle(source, limit=False):
         output = list()
-        while len(filtered) > 0:
-            choosen = random.choice(filtered)
+        source_copy = list(set(source))
+        if not limit:
+            limit = len(source_copy)
+        while len(output) < limit:
+            choosen = random.choice(source_copy)
             output.append(choosen)
-            filtered.remove(choosen)
-            if len(output) == limit:
+            source_copy.remove(choosen)
+            if not len(source_copy):
                 break
         return output
 

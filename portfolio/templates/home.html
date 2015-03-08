@@ -46,13 +46,13 @@
                                 <li data-keywords="trend">Trend<br>Research</li>
                             </ul>
                             <ul class="gallery">
-                                {% for key in projects.order %}
-                                <li class="{{ projects.all[key]['keywords']|join(' ') }}">
-                                    <a href="/{{ key }}">
-                                        <img alt="{{ projects.all[key]['title'] }}" src="{{ url_for('site.static', filename='imgs/{}'.format(projects.all[key]['cover'])) }}">
+                                {% for project in projects %}
+                                <li class="{{ project['keywords']|join(' ') }}">
+                                    <a href="/{{ project['key'] }}">
+                                        <img alt="{{ project['title'] }}" src="{{ url_for('site.static', filename='imgs/{}'.format(project['cover'])) }}">
                                         <div class="description">
-                                            <h5>{{ projects.all[key]['title'] }}</h5>
-                                            <h6>{{ projects.all[key]['tagline'] }}</h6>
+                                            <h5>{{ project['title'] }}</h5>
+                                            <h6>{{ project['tagline'] }}</h6>
                                         </div><!-- end .description -->
                                     </a>
                                 </li>

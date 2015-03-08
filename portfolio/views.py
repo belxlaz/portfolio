@@ -18,7 +18,7 @@ projects = Project()
 # home
 @site.route('/')
 def index():
-    return render_minified('home.html')
+    return render_minified('home.html', projects=projects.ordered())
 
 
 # project pages
@@ -35,11 +35,9 @@ def portfolio(key):
     g.keywords = project['keywords']
     g.cover = project['cover']
 
-    # generate template variables
-    template = '{}.html'.format(key)
-    suggestions = projects.suggestion(key, 6)
-
-    return render_minified(template, project=project, suggestions=suggestions)
+    return render_minified('{}.html'.format(key),
+                           project=project,
+                           suggestions=projects.suggestion(key, 6))
 
 
 # seo and browser
@@ -80,5 +78,4 @@ def title():
             'description': description,
             'cover': cover,
             'keywords': ', '.join(keywords),
-            'page_class': page_class,
-            'projects': projects}
+            'page_class': page_class}
