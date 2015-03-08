@@ -74,7 +74,7 @@ def title():
     subtitle = g.get('title', None)
     tagline = g.get('tagline', None)
     title = '{} | {}'.format(subtitle, name) if subtitle else name
-    description = '{} | {}'.format(subtitle, tagline) if tagline else about
+    description = tagline if tagline else about
     cover = g.get('cover', image)
 
     # set page class
