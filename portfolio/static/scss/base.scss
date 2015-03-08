@@ -9,7 +9,7 @@
     margin-bottom: .2em;
     margin-top: .3em;
     width: 1em;
-    @include media($desktop) {
+    @include media($tablet) {
       height: 1.618em;
       margin-bottom: .382em;
       margin-top: .382em;
@@ -19,7 +19,7 @@
   nav {
     float: right;
     margin-top: .6em;
-    @include media($desktop) {
+    @include media($tablet) {
       margin-top: 1em;
       width: 60%;
     }
@@ -29,7 +29,7 @@
 .menu {
   ul {
     display: none;
-    @include media($desktop) {
+    @include media($tablet) {
       display: block;
       padding: 0;
       text-align: right;

@@ -53,7 +53,7 @@
     height: 2em;
     position: relative;
     width: 2em;
-    @include media($desktop) { display: none }
+    @include media($tablet) { display: none }
   }
 
   &.active #burger { background-color: transparent }

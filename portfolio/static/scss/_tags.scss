@@ -14,7 +14,7 @@ a {
 
 main {
   padding-top: 3em;
-  @include media($desktop) { padding-top: 5em }
+  @include media($tablet) { padding-top: 5em }
 }
 
 article {
