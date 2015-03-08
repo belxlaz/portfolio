@@ -74,7 +74,6 @@ class Project(object):
             limit = len(filtered)
 
         # randomize and crop
-        print(limit)
         output = self.__shuffle(filtered, limit)
 
         # complete with other categories (if needed)

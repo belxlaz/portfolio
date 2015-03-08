@@ -7,9 +7,10 @@ try:
 except NameError:
     pass
 
-from flask import abort, Blueprint, g
+from flask import abort, Blueprint, g, make_response, render_template
 from portfolio.minify import render_minified
 from portfolio.projects import Project
+from portfolio.sitemap import Sitemap
 
 site = Blueprint('site', __name__, static_folder='static')
 projects = Project()
@@ -44,6 +45,15 @@ def portfolio(key):
 @site.route('/robots.txt')
 def robots():
     return site.send_static_file('robots.txt')
+
+
+@site.route('/sitemap.xml')
+def sitemap():
+    info = Sitemap(project_list=projects.order)
+    xml = render_template('sitemap.xml', pages=info.pages)
+    response = make_response(xml)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
 
 
 @site.route('/favicon.ico')
