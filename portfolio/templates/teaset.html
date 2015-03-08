@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-teaset-cover.jpg', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Tea Set
+                                    <span>Made for each other</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic design, illustration</dd>
+                                    <dt>Development</dt>
+                                    <dd>Graduation project - UDESC</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                    </header>
+                </div><!-- end #project-header -->
+                <div id="project-content">
+                    <div class="content centered">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Project</h3>
+                                    <p class="pre-split">Tea set developed for a Brazilian ceramic company (Oxford) celebrating the Valentine's day. The idea was to create a gift option for young couples, considering the company's printing processes and its portfolio. The handmade illustration brings some elements from everyday life, showing the couple's complicity through gestures, caress​ and personal objects.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>               
+                 <div class="wide">
+                    {{ img('projects-teaset-products.jpg', 'Products') }}
+                </div><!-- end .wide -->
+        {% include '_suggestions.html' %}
+{% endblock %}
