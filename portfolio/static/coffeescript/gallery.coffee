@@ -1,9 +1,12 @@
 $ ->
 
+  # save the initial status of the gallery
+  $.projects = $('.gallery').clone()
+
   # enable filter
   $('.filter').find('li').click ->
 
-    # toggle filter menu class
+    # toggle class
     $(this).parent().find('li').removeClass 'active'
     $(this).addClass 'active'
 
@@ -14,13 +17,16 @@ $ ->
     $('.gallery').fadeOut {
       complete: ->
         
+        # replace gallery with the original one
+        $(this).html $.projects.html()
+
         # filter
         $(this).find('li').each ->
           classes = $(this).attr('class').split ' '
           intersection = array_intersection keywords, classes
-          if intersection.length then $(this).show() else $(this).hide()
+          $(this).remove() if intersection.length == 0
   
-        # show gallery
+        # show all projects
         $(this).fadeIn()
     }
 
