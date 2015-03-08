@@ -91,7 +91,7 @@
       @include media($tablet, $desktop) {
         @include span-columns(3);
         &:nth-child(4n) { margin-right: 0 }
-        &:nth-child(5n) { clear: left }
+        &:nth-child(4n+1) { clear: left }
       }
     }
     a {
