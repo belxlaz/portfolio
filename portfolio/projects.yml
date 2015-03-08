@@ -22,11 +22,11 @@ ares:
     keywords: ux, graphic
     cover: projects-ares.jpg
 
-retro:
-    title: Brastemp Retrô
-    tagline: A fridge inspired by the past
-    keywords: graphic
-    cover: projects-retro.jpg
+consulbemestar:
+    title: Consul Bem Estar
+    tagline: A big change in Consul's visual brand language
+    keywords: ux, graphic
+    cover: projects-consulbemestar.jpg
 
 expedicao:
     title: Expedição Liberdade
@@ -39,3 +39,15 @@ ts60:
     tagline: Solutions for homes and offices
     keywords: ux, graphic
     cover: projects-ts60.jpg
+
+retro:
+    title: Brastemp Retrô
+    tagline: A fridge inspired by the past
+    keywords: graphic
+    cover: projects-retro.jpg
+
+halare:
+    title: Halare
+    tagline: Physical rehabilitation center
+    keywords: graphic
+    cover: projects-halare.jpg

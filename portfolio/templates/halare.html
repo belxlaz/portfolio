@@ -1,0 +1,44 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-halare-cover.jpg', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Halare
+                                    <span>Physical rehabilitation center</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic design, branding</dd>
+                                    <dt>Job</dt>
+                                    <dd>Freelancer</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                    </header>
+                </div><!-- end #project-header -->
+                <div id="project-content">
+                    <div class="content ares-interface">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Project</h3>
+                                    <p class="pre-split">Halare is a physical rehabilitation center focused on post operative patients in need of specific care. As the name is a latin word that means ‘breath’ the logo inspiration came from the shape of algaes: they are responsible for more than half of the oxygen we breath. The vibrant palette comes from the variety of colorful algaes found in nature. It also brings energy and happiness to the brand, important aspects for the emotional recovery of patients. To balance the joyful element the lettering appear in a neutral color and in a modern typography. </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>               
+                 <div class="wide">
+                    {{ img('projects-halare-logo.jpg', 'Logo') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-halare-stationary.jpg', 'Stationary') }}
+                </div><!-- end .wide -->
+        {% include '_suggestions.html' %}
+{% endblock %}

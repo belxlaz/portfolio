@@ -1,0 +1,47 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-consulbemestar_cover.jpg', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Consul Bem Estar
+                                    <span>A big change in Consul's visual brand language</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic design, CMF and UI/UX design</dd>
+                                    <dt>Team</dt>
+                                    <dd>Whirlpool - Industrial Design (Brazil)</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                    </header>
+                </div><!-- end #project-header -->
+                <div id="project-content">
+                    <div class="content ares-interface">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Project</h3>
+                                    <p class="pre-split">For over 60 years Consul's trajectory merges with the history of the home appliances industry in Brazil. Focusing on credibility, user friendliness and creativity this project was the first step towards a big change in Consul's visual brand language (VBL).The external part was designed to bring a technological appeal with a touch screen interface and metallic finishes. In the interior joyful icons and colorful spots highlight key features of the product. The craftsmanship excellence comes with a careful attention to all small details, such as the alternance of glossy/matte and transparent/opaque finishes, or graphics that only appears when the food is inside a drawer.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>               
+                 <div class="wide">
+                    {{ img('projects-consulbemestar_products.jpg', 'Products') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-consulbemestar_panel.jpg', 'Panel') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-consulbemestar_details.jpg', 'Details') }}
+                </div><!-- end .wide -->
+        {% include '_suggestions.html' %}
+{% endblock %}
