@@ -1,0 +1,44 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-consulfacilite-cover.jpg', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Consul Facilite | Washing Machine
+                                    <span>Intuitive washing settings</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic design, UI/UX design</dd>
+                                    <dt>Team</dt>
+                                    <dd>Whirlpool - Industrial Design (Brazil)</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                    </header>
+                </div><!-- end #project-header -->
+                <div id="project-content">
+                    <div class="content centered">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Project</h3>
+                                    <p class="pre-split">Consul Facilite Washing Machine was designed to be helpful during all the washing steps.Visiting consumers we observed that the main criteria to separate clothes before washing are: color (dark, light, colorful) and dirtiness (slightly dirty, dirty, very dirty). Therefore we created programs following the same logic. In order to be more intuitive, the programs were placed around a central knob.Yet the interface guides users through sequential settings. Finally an orange ruler inside the washing machine matches orange scales around the knob and inside the drawer; this helps users to set the proper volume of water, detergent and fabric softener.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>               
+                 <div class="wide">
+                    {{ img('projects-consulfacilite-product.jpg', 'Product') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-consulfacilite-details.jpg', 'Details') }}
+                </div><!-- end .wide -->
+        {% include '_suggestions.html' %}
+{% endblock %}

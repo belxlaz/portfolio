@@ -23,7 +23,7 @@ ares:
     cover: projects-ares.jpg
 
 consulbemestar:
-    title: Consul Bem Estar
+    title: Consul Bem Estar | Fridge
     tagline: A big change in Consul's visual brand language
     keywords: ux, graphic
     cover: projects-consulbemestar.jpg
@@ -51,3 +51,9 @@ halare:
     tagline: Physical rehabilitation center
     keywords: graphic
     cover: projects-halare.jpg
+
+consulfacilite:
+    title: Consul Facilite | Washing Machine
+    tagline: Intuitive washing settings
+    keywords: ux, graphic
+    cover: projects-consulfacilite.jpg
