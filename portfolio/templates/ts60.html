@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+{% block content %}
+
+                <div id="project-header">
+                    <header>
+                        <div class="wide vertical-crop">
+                            {{ img('projects-ts60-cover.jpg', project['title']) }}
+                        </div><!-- end .wide -->
+                        <div class="info">
+                            <div class="content">
+                                <h2>
+                                    Intelbras TS 60 and TS 40
+                                    <span>Solutions for homes and offices</span>
+                                </h2>
+                                <dl>
+                                    <dt>My role</dt>
+                                    <dd>Graphic design, UI/UX design</dd>
+                                    <dt>Team</dt>
+                                    <dd>Intelbras Industrial Design</dd>
+                                    <dt>Awards</dt>
+                                    <dd>IDEA Brazil</dd>
+                                </dl>
+                            </div><!-- end .project-content -->
+                        </div><!-- end .info -->
+                    </header>
+                </div><!-- end #project-header -->
+                <div id="project-content">
+                    <div class="content ares-interface">
+                        <article class="no-split">
+                            <div class="row">
+                                <div class="whole">
+                                    <h3>Project</h3>
+                                    <p class="pre-split">The TS 60 and TS 40 phones were designed for different purposes, combining solutions for homes or offices. Inspired by the emotional relationship between people and their objects, the design has an outstanding personality expressed through the display that embraces the phone, the oblong keys and the contrast between silky and glossy textures.In order to develop a friendly interface we invited users to co-criate images to represent common features (e.g hour and agenda, settings, contacts). The results oriented us to design a new set of icons for a matrix display.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>               
+                 <div class="wide">
+                    {{ img('projects-ts60-set.jpg', 'Set') }}
+                </div><!-- end .wide -->
+                <div class="wide">
+                    {{ img('projects-ts60-icon.jpg', 'Icons') }}
+                </div><!-- end .wide -->
+        {% include '_suggestions.html' %}
+{% endblock %}

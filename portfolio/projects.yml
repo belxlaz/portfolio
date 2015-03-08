@@ -33,3 +33,9 @@ expedicao:
     tagline: Alternatives for education
     keywords: ux, trend
     cover: projects-exp.jpg
+
+ts60:
+    title: Intelbras TS 60 and TS 40
+    tagline: Solutions for homes and offices
+    keywords: ux, graphic
+    cover: projects-ts60.jpg
