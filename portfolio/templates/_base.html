@@ -14,14 +14,14 @@
         <meta property="og:site_name" content="{{ name }}">
         <meta property="og:title" content="{{ title }}">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ request.url }}">
-        <meta property="og:image" content="{{ url_for('site.static', filename='imgs/{}'.format(cover), _external=True) }}">
+        <meta property="og:url" content="{{ request.url|replace('portfolio.fcgi/', '') }}">
+        <meta property="og:image" content="{{ url_for('site.static', filename='imgs/{}'.format(cover), _external=True)|replace('portfolio.fcgi/', '') }}">
         <meta property="og:description" content="{{ description }}">
         <meta property="twitter:card" content="summary">
-        <meta property="twitter:url" content="{{ request.url }}">
+        <meta property="twitter:url" content="{{ request.url|replace('portfolio.fcgi/', '') }}">
         <meta property="twitter:title" content="{{ title }}">
         <meta property="twitter:description" content="{{ description }}">
-        <meta property="twitter:image" content="{{ url_for('site.static', filename='imgs/{}'.format(cover), _external=True) }}"> 
+        <meta property="twitter:image" content="{{ url_for('site.static', filename='imgs/{}'.format(cover), _external=True)|replace('portfolio.fcgi/', '') }}"> 
         <meta name="google-site-verification" content="NyFnv7IpyrrUjMTOPv_hN5nc6SFGTbKX28YqdVlZqJM">
     
         <!-- favicons -->
