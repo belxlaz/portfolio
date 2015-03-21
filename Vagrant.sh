@@ -1,50 +1,51 @@
 #!/usr/bin/env bash
-echo ""
+echo "==> "
 echo "==> Updating the OS..."
-echo ""
+echo "==> "
 apt-get update
-apt-get upgrade -y
-apt-get autoremove -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+apt-get autoremove -y >/dev/null 2>&1
 
-echo ""
+echo "==> "
 echo "==> Installing basic dev tools..."
-echo ""
+echo "==> "
 apt-get install -y wget curl git build-essential
 
-echo ""
-echo "==> Installing basic Python dev toos..."
-echo ""
-apt-get install -y python3 python3-pip python3-setuptools python3-dev
+echo "==> "
+echo "==> Installing Python3..."
+echo "==> "
+apt-get install -y python3 python3-setuptools python3-dev
 
-echo ""
+echo "==> "
 echo "==> Installing packages required by PyYAML..."
-echo ""
+echo "==> "
 apt-get install -y libxml2-dev libxslt-dev
 
-echo ""
+echo "==> "
 echo "==> Installing Node..."
-echo ""
+echo "==> "
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 apt-get install -y nodejs
 
-echo ""
+echo "==> "
 echo "==> Installing CoffeeScript and Bower..."
-echo ""
+echo "==> "
 npm install -g coffee-script
 npm install -g bower
 
-echo ""
-echo "==> Installing project dependecies..."
-echo ""
-pip3 install -r /vagrant/requirements.txt
+echo "==> "
+echo "==> Install pip..."
+echo "==> "
+curl https://bootstrap.pypa.io/get-pip.py | sudo python3 -
 
-echo ""
-echo "==> Installing Bower packages..."
-echo ""
+echo "==> "
+echo "==> Installing project dependecies..."
+echo "==> "
 cd /vagrant
 su -c "bower install" -s /bin/sh vagrant
+pip3 install -r /vagrant/requirements.txt
 
-echo ""
+echo "==> "
 echo "==> Installing Python development tools..."
-echo ""
-pip3 install ipython3 flake8
+echo "==> "
+pip3 install flake8
