@@ -13,12 +13,12 @@ PROJECTS = path.join(BASEDIR, 'projects.yml')
 
 # webassets
 ASSETS = path.join(BASEDIR, 'assets.yml')
-STATIC = path.join(BASEDIR, 'static')
-BOURBON = path.join(STATIC, 'bower/bourbon/app/assets/stylesheets')
-NEAT = path.join(STATIC, 'bower/neat/app/assets/stylesheets')
-SCSS = path.join(STATIC, 'scss')
+SRC = path.join(BASEDIR, 'src')
+BOURBON = path.join(SRC, 'bower/bourbon/app/assets/stylesheets')
+NEAT = path.join(SRC, 'bower/neat/app/assets/stylesheets')
+SCSS = path.join(SRC, 'scss')
 PYSCSS_LOAD_PATH = [BOURBON, NEAT, SCSS]
-WEBASSETS_LOAD_PATH = [STATIC]
+WEBASSETS_LOAD_PATH = [SRC]
 COFFEE_BIN = config('COFFEE_BIN', default=False)
 
 # google analytics user id

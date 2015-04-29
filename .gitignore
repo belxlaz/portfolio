@@ -6,7 +6,7 @@ portfolio/static/.webassets-cache/
 
 # node, bower and compiled/processed assets
 node_modules/
-portfolio/static/bower/
+portfolio/src/bower/
 portfolio/static/*.js
 portfolio/static/*.css
 

@@ -44,7 +44,9 @@ def portfolio(key):
 # seo and browser
 @site.route('/robots.txt')
 def robots():
-    return site.send_static_file('robots.txt')
+    response = make_response('User-agent: *\nDisallow:')
+    response.headers['Content-Type'] = 'text/plain'
+    return response
 
 
 @site.route('/sitemap.xml')
