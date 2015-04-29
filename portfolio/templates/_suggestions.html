@@ -5,7 +5,7 @@
                     <ul>
                         {% for project in suggestions %}
                         <li>
-                            <a href="/{{ project['key'] }}">{{ img(project['cover'], project['title']) }}</a>
+                            <a href="{{ url_for('site.portfolio', key=project['key']) }}">{{ img(project['cover'], project['title']) }}</a>
                         </li>
                         {% endfor %}
                     </ul>

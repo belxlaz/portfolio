@@ -34,8 +34,6 @@
         <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('site.static', filename='imgs/favicon/apple-touch-icon-76x76.png')}}">
         <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('site.static', filename='imgs/favicon/apple-touch-icon-152x152.png')}}">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('site.static', filename='imgs/favicon/apple-touch-icon-180x180.png')}}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('site.static', filename='imgs/favicon/favicon-192x192.png')}}">
-        <link rel="icon" type="image/png" sizes="160x160" href="{{ url_for('site.static', filename='imgs/favicon/favicon-160x160.png')}}">
         <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('site.static', filename='imgs/favicon/favicon-96x96.png')}}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('site.static', filename='imgs/favicon/favicon-16x16.png')}}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('site.static', filename='imgs/favicon/favicon-32x32.png')}}">
@@ -46,7 +44,7 @@
         <!-- assets -->
         {% assets 'css' %}
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,300,700,300italic,400italic,700italic">
-        <link rel="stylesheet" href="{{ ASSET_URL }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
         {% endassets %}
 
     </head>
@@ -59,7 +57,7 @@
                 <div class="content">
                     <header>
                         <h1>
-                            <a href="/#page">
+                            <a href="{{ url_for('site.index') }}#page">
                                 <img src="{{ url_for('site.static', filename='imgs/logo.svg') }}" alt="{{ name }}">
                             </a>
                         </h1>
@@ -109,7 +107,7 @@
         </nav>
 
         {% assets 'js' %}
-        <script src="{{ ASSET_URL }}"></script>
+        <script src="{{ url_for('site.static', filename='app.js') }}"></script>
         {% endassets %}
 
         {% if config['INSERT_GOOGLE_ANALYTICS'] and 'mabel.ml' in request.url %}

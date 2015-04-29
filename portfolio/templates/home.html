@@ -48,7 +48,7 @@
                             <ul class="gallery">
                                 {% for project in projects %}
                                 <li class="{{ project['keywords']|join(' ') }}">
-                                    <a href="/{{ project['key'] }}">
+                                    <a href="{{ url_for('site.portfolio', key=project['key']) }}">
                                         <img alt="{{ project['title'] }}" src="{{ url_for('site.static', filename='imgs/{}'.format(project['cover'])) }}">
                                         <div class="description">
                                             <h5>{{ project['title'] }}</h5>
