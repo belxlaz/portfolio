@@ -14,7 +14,7 @@ def index():
 
 
 # project pages
-@site.route('/<key>')
+@site.route('/<key>/')
 def portfolio(key):
 
     # check if project exists
