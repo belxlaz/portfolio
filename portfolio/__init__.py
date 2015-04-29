@@ -1,5 +1,3 @@
-# coding: utf-8
-
 from flask import Flask
 from flask.ext.assets import Environment
 from flask.ext.compress import Compress

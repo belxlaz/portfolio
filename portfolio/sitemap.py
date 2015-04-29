@@ -1,5 +1,3 @@
-# coding: utf-8
-
 from datetime import datetime
 from os import path, walk
 
