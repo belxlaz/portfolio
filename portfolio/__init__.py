@@ -1,5 +1,6 @@
 from flask import Flask
 from flask.ext.assets import Environment
+from flask.ext.frozen import Freezer
 from flask.ext.script import Manager
 from portfolio.views import site
 
@@ -22,3 +23,14 @@ assets.from_yaml(app.config['ASSETS'])
 # load views
 app.register_blueprint(site)
 
+# freezer
+FreezerCommand = Manager(usage='Frozen-Flask commands')
+
+
+@FreezerCommand.command
+def freeze():
+    """Freeze Flask application"""
+    freezer = Freezer(app)
+    freezer.freeze() 
+
+manager.add_command('freezer', FreezerCommand)

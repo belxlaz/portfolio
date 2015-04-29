@@ -4,6 +4,9 @@
 *.log
 portfolio/static/.webassets-cache/
 
+# frozen-flask
+portfolio/build/
+
 # node, bower and compiled/processed assets
 node_modules/
 portfolio/src/bower/
