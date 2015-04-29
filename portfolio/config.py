@@ -23,6 +23,3 @@ COFFEE_BIN = config('COFFEE_BIN', default=False)
 # google analytics user id
 GOOGLE_ANALYTICS = config('GOOGLE_ANALYTICS', default=False)
 INSERT_GOOGLE_ANALYTICS = GOOGLE_ANALYTICS and not DEBUG
-
-# error logging
-LOG = path.join(path.dirname(BASEDIR), 'errors.log')

@@ -1,13 +1,11 @@
 from flask import Flask
 from flask.ext.assets import Environment
-from flask.ext.compress import Compress
 from flask.ext.script import Manager
 from portfolio.views import site
 
 # init the app, its compressor and its manager
 app = Flask('portfolio')
 manager = Manager(app)
-Compress(app)
 
 # config
 app.config.from_pyfile('config.py')
@@ -24,16 +22,3 @@ assets.from_yaml(app.config['ASSETS'])
 # load views
 app.register_blueprint(site)
 
-# manage errors
-if not app.config['DEBUG']:
-    import logging
-    from logging.handlers import RotatingFileHandler
-    filepath = app.config['LOG']
-    handler = RotatingFileHandler(filepath, 'a', 1 * 1024 * 1024, 10)
-    format = ['%(asctime)s', '%(levelname)s:', '%(message)s',
-              '[%(pathname)s:%(lineno)d]']
-    handler.setFormatter(logging.Formatter(' '.join(format)))
-    handler.setLevel(logging.INFO)
-    app.logger.setLevel(logging.INFO)
-    app.logger.addHandler(handler)
-    app.logger.info('App started successfully.')
