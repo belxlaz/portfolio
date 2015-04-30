@@ -70,7 +70,11 @@ class Project(object):
                     if project not in filtered and project != key:
                         filtered.append(project)
         if not limit:
-            limit = len(filtered)
+            if filtered:
+                limit = len(filtered)
+            else:
+                limit = len(self.order) - 1
+                filtered = set(self.order) - set([key])
 
         # randomize and crop
         output = self.__shuffle(filtered, limit)
@@ -78,7 +82,7 @@ class Project(object):
         # complete with other categories (if needed)
         if len(output) < limit:
             remaining = limit - len(output)
-            alternatives = list(set(self.order) - set(output))
+            alternatives = (set(self.order) - set([key])) - set(output)
             output.extend(self.__shuffle(alternatives, remaining))
             output = self.__shuffle(output)
 
