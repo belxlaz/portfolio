@@ -31,6 +31,6 @@ FreezerCommand = Manager(usage='Frozen-Flask commands')
 def freeze():
     """Freeze Flask application"""
     freezer = Freezer(app)
-    freezer.freeze() 
+    freezer.freeze()
 
 manager.add_command('freezer', FreezerCommand)
