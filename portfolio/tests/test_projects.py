@@ -109,3 +109,4 @@ class TestProjects(TestCase):
         for_trend = self.projects.suggestion('trend')
         self.assertIsInstance(for_trend, list)
         self.assertEqual(len(for_trend), 2)
+        self.assertNotIn(self.projects.get('trend'), for_trend)
