@@ -69,3 +69,13 @@ class TestProjects(TestCase):
         for favicon in favicons:
             resp = self.app.get(favicon)
             self.assertEqual(resp.status_code, 200)
+
+    def test_css(self):
+        resp = self.app.get('/static/app.css')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.mimetype, 'text/css')
+
+    def test_js(self):
+        resp = self.app.get('/static/app.js')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.mimetype, 'application/javascript')
