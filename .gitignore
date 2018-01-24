@@ -9,8 +9,10 @@ portfolio/build/
 
 # node, bower and compiled/processed assets
 node_modules/
-portfolio/static/*.js
-portfolio/static/*.css
+portfolio/static/**/*.br
+portfolio/static/**/*.css
+portfolio/static/**/*.gz
+portfolio/static/**/*.js
 
 # dev tools, ide etc.
 .env

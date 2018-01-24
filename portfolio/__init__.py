@@ -1,9 +1,12 @@
 from flask import Flask
 from flask_assets import Environment
+from whitenoise import WhiteNoise
+
 from portfolio.views import site
 
-# init the app, its compressor and its manager
+# init the app
 app = Flask('portfolio')
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 # config
 app.config.from_pyfile('config.py')
@@ -19,3 +22,11 @@ assets.from_yaml(app.config['ASSETS'])
 
 # load views
 app.register_blueprint(site)
+
+@app.cli.command(help='Compress static files.')
+def compress():
+    import os
+    import shutil
+    from whitenoise.compress import main
+    shutil.rmtree(os.path.join('portfolio', 'static', '.webassets-cache'))
+    main(os.path.join('portfolio', 'static'))

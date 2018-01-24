@@ -12,17 +12,20 @@ python_version = "3.6"
 
 [packages]
 
+brotli = "*"
+cssmin = "*"
 flask = "*"
 flask-assets = "*"
-pyyaml = "*"
-cssmin = "*"
+gunicorn = "*"
 htmlmin = "*"
-python-decouple = "*"
 libsass = "*"
+python-decouple = "*"
+pyyaml = "*"
+whitenoise = "*"
 
 
 [dev-packages]
 
 nose = "*"
-rednose = "*"
 pyquery = "*"
+rednose = "*"

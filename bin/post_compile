@@ -1,0 +1,3 @@
+echo "-----> Compiling and compressing assets"
+flask assets build
+flask compress
