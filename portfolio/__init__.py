@@ -1,5 +1,5 @@
 from flask import Flask
-from flask.ext.assets import Environment
+from flask_assets import Environment
 from portfolio.views import site
 
 # init the app, its compressor and its manager
