@@ -4,15 +4,16 @@
     "url": "git://github.com/belxlaz/portfolio.git",
     "private": true
   },
-  "engines": {
-    "node": "0.10.x"
-  },
   "dependencies": {
-    "bower": "1.3.x",
-    "coffee": "^1.0.0",
-    "coffee-script": "1.8.x"
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "^1.9.0",
+    "coffeescript": "^2.1.1",
+    "fastclick": "1.0.6",
+    "jquery": "2.1.3",
+    "modernizr": "^3.5.0",
+    "normalize.css": "3.0.2"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "modernizr -c node_modules/modernizr/lib/config-all.json -d portfolio/static"
   }
 }

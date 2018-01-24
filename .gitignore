@@ -9,13 +9,11 @@ portfolio/build/
 
 # node, bower and compiled/processed assets
 node_modules/
-portfolio/src/bower/
 portfolio/static/*.js
 portfolio/static/*.css
 
 # dev tools, ide etc.
 .env
-.vagrant/
 .ropeproject
 *.swp
 *.swo

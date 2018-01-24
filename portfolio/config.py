@@ -1,5 +1,5 @@
 from decouple import config
-from os import path
+from os import pardir, path
 
 # basic app settings
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -8,16 +8,17 @@ SECRET_KEY = config('SECRET_KEY', default=False)
 
 # directories and files
 BASEDIR = path.dirname(path.abspath(__file__))
+ROOT = path.abspath(path.join(BASEDIR, pardir))
 PROJECTS = path.join(BASEDIR, 'projects.yml')
 
 # webassets
 ASSETS = path.join(BASEDIR, 'assets.yml')
-SRC = path.join(BASEDIR, 'src')
-BOURBON = path.join(SRC, 'bower/bourbon/app/assets/stylesheets')
-NEAT = path.join(SRC, 'bower/neat/app/assets/stylesheets')
-SCSS = path.join(SRC, 'scss')
 PYSCSS_LOAD_PATH = [BOURBON, NEAT, SCSS]
-WEBASSETS_LOAD_PATH = [SRC]
+NODE = path.join(ROOT, 'node_modules')
+BOURBON = path.join(NODE, 'bourbon', 'app', 'assets', 'stylesheets')
+NEAT = path.join(NODE, 'bourbon-neat', 'app', 'assets', 'stylesheets')
+SCSS = path.join(NODE, 'scss')
+WEBASSETS_LOAD_PATH = [NODE, BASEDIR]
 COFFEE_BIN = config('COFFEE_BIN', default=False)
 
 # freezer

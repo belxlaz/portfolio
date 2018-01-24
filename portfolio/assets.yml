@@ -2,9 +2,9 @@ js:
   output: app.js
   filters: rjsmin
   contents:
-    - bower/fastclick/lib/fastclick.js
-    - bower/modernizr/modernizr.js
-    - bower/jquery/dist/jquery.js
+    - fastclick/lib/fastclick.js
+    - static/modernizr.js
+    - jquery/dist/jquery.js
     - output: init.js
       filters: coffeescript
       contents:
@@ -19,7 +19,7 @@ css:
   output: app.css
   filters: pyscss, cssmin
   contents:
-    - bower/normalize.css/normalize.css
+    - normalize.css/normalize.css
     - scss/app.scss
   depends:
     - scss/_animations.scss
@@ -30,5 +30,5 @@ css:
     - scss/_tags.scss
     - scss/base.scss
     - scss/home.scss
-    - scss/projects.scss 
-    - scss/project_specific.scss 
+    - scss/projects.scss
+    - scss/project_specific.scss
