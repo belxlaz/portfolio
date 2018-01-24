@@ -12,7 +12,7 @@ app.jinja_env.lstrip_blocks = True
 
 # assets
 assets = Environment(app)
-assets.config['PYSCSS_LOAD_PATHS'] = app.config['PYSCSS_LOAD_PATH']
+assets.config['LIBSASS_INCLUDES'] = app.config['LIBSASS_INCLUDES']
 assets.config['coffeescript_bin'] = app.config['COFFEE_BIN']
 assets.load_path = app.config['WEBASSETS_LOAD_PATH']
 assets.from_yaml(app.config['ASSETS'])

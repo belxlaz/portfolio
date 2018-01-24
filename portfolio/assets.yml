@@ -17,7 +17,7 @@ js:
 
 css:
   output: app.css
-  filters: pyscss, cssmin
+  filters: libsass, cssmin
   contents:
     - normalize.css/normalize.css
     - scss/app.scss

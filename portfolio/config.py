@@ -13,11 +13,11 @@ PROJECTS = path.join(BASEDIR, 'projects.yml')
 
 # webassets
 ASSETS = path.join(BASEDIR, 'assets.yml')
-PYSCSS_LOAD_PATH = [BOURBON, NEAT, SCSS]
 NODE = path.join(ROOT, 'node_modules')
 BOURBON = path.join(NODE, 'bourbon', 'app', 'assets', 'stylesheets')
 NEAT = path.join(NODE, 'bourbon-neat', 'app', 'assets', 'stylesheets')
 SCSS = path.join(NODE, 'scss')
+LIBSASS_INCLUDES = [BOURBON, NEAT, SCSS]
 WEBASSETS_LOAD_PATH = [NODE, BASEDIR]
 COFFEE_BIN = config('COFFEE_BIN', default=False)
 
